@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Not published yet</title>
+<style>
+  :root { color-scheme: dark; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    display: grid;
+    place-items: center;
+    background: #080d0b;
+    color: #93aaa0;
+    font: 400 .875rem/1.7 ui-monospace, "Cascadia Mono", Consolas, monospace;
+  }
+  main { padding: 24px; }
+  p { margin: 0; }
+  .pr { color: #3df08a; }
+  .pt { color: #6fd3f0; }
+  .caret {
+    display: inline-block; width: .55em; height: 1.05em;
+    background: #3df08a; vertical-align: text-bottom;
+    animation: blink 1.15s steps(2, start) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
+</style>
+</head>
+<body>
+  <main>
+    <p><span class="pr">visitor@portfolio</span><span class="pt">:~$</span> cat index.html</p>
+    <p>cat: index.html: not published yet</p>
+    <p><span class="pr">visitor@portfolio</span><span class="pt">:~$</span> <span class="caret" aria-hidden="true"></span></p>
+  </main>
+</body>
+</html>
