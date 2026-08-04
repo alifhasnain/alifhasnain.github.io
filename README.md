@@ -25,8 +25,32 @@ npx --yes serve .
 
 ## Deploy it
 
-Push the folder. It works unchanged on GitHub Pages, Netlify, Cloudflare Pages,
-or any bucket. There is nothing to build and no environment variable to set.
+Nothing to build, no environment variable to set. Works unchanged on GitHub Pages,
+Netlify, Cloudflare Pages, or any bucket.
+
+### Current state: deliberately unpublished
+
+Live at `https://alifhasnain.github.io`, but **serving a holding page, not this
+site.** Pages cannot be disabled on a `<user>.github.io` repo (the API returns
+`422`), and pointing it at an empty branch just makes Pages keep serving the last
+good build. So there are two branches:
+
+| Branch | Contains | Role |
+|---|---|---|
+| `main` | this site | the real work; not currently served |
+| `pages-holding` | one `noindex` holding page | what Pages serves today |
+
+**To publish for real:** GitHub → Settings → Pages → Branch: `main`. Or:
+
+```bash
+gh api -X PUT repos/alifhasnain/alifhasnain.github.io/pages \
+  --input - <<< '{"source":{"branch":"main","path":"/"}}'
+```
+
+Do that only after the bracket tokens are gone (`grep -n "\[" index.html`) — the
+root URL is the address that goes on a résumé.
+
+Do not delete `pages-holding`; it is the only way to take the site down again.
 
 ## Layout of the files
 
