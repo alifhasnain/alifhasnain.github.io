@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-05T00:00:00.000Z",
+  "title": "Design System: Dev Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "phosphor": {
+        "role": "primary",
+        "displayName": "Phosphor Green",
+        "canonical": "#3df08a",
+        "tonalRamp": ["#031a0d", "#05301a", "#074628", "#0b6a3c", "#129454", "#17a05c", "#2bd478", "#3df08a"]
+      },
+      "phosphor-link": {
+        "role": "primary",
+        "displayName": "Link Green",
+        "canonical": "#2bd478",
+        "tonalRamp": ["#02170c", "#042b16", "#063f21", "#0a6033", "#108549", "#159a56", "#2bd478", "#63e79c"]
+      },
+      "phosphor-dim": {
+        "role": "primary",
+        "displayName": "Dim Green",
+        "canonical": "#17a05c",
+        "tonalRamp": ["#021208", "#042411", "#05361a", "#085228", "#0d7440", "#17a05c", "#2bd478", "#7cecad"]
+      },
+      "phosphor-deep": {
+        "role": "primary",
+        "displayName": "Deep Green",
+        "canonical": "#0b4c2d",
+        "tonalRamp": ["#020d07", "#04190e", "#062715", "#0b4c2d", "#106c40", "#158d54", "#2bd478", "#93f0ba"]
+      },
+      "signal-teal": {
+        "role": "secondary",
+        "displayName": "Signal Teal",
+        "canonical": "#35d3c4",
+        "tonalRamp": ["#04191a", "#062d2c", "#08403e", "#0c6360", "#128b86", "#1fada6", "#35d3c4", "#7ce8de"]
+      },
+      "caution-amber": {
+        "role": "secondary",
+        "displayName": "Caution Amber",
+        "canonical": "#e3b341",
+        "tonalRamp": ["#1c1405", "#31240a", "#47340e", "#6b4f16", "#96701f", "#c09029", "#e3b341", "#f2d489"]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Ground",
+        "canonical": "#080d0b",
+        "tonalRamp": ["#050807", "#080d0b", "#0c1311", "#101a17", "#14201c", "#1b2a25", "#27443a", "#3b6154"]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel",
+        "canonical": "#0c1311",
+        "tonalRamp": ["#050807", "#080d0b", "#0c1311", "#101a17", "#14201c", "#1b2a25", "#27443a", "#3b6154"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#1b2a25",
+        "tonalRamp": ["#080d0b", "#0f1714", "#15201c", "#1b2a25", "#27443a", "#35604f", "#4a8069", "#6aa88c"]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Text",
+        "canonical": "#dfeae4",
+        "tonalRamp": ["#151d19", "#28352e", "#3d5146", "#546c60", "#6f887b", "#93aaa0", "#bccfc5", "#dfeae4"]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Text Muted",
+        "canonical": "#93aaa0",
+        "tonalRamp": ["#121816", "#222d29", "#33423c", "#475a52", "#64796f", "#93aaa0", "#bacfc5", "#dfeae4"]
+      },
+      "text-faint": {
+        "role": "neutral",
+        "displayName": "Text Faint",
+        "canonical": "#64796f",
+        "tonalRamp": ["#0d1210", "#181f1c", "#242f2a", "#33423c", "#4c5f57", "#64796f", "#8fa39a", "#c3d3cb"]
+      },
+      "syntax-keyword": { "role": "tertiary", "displayName": "Syntax Keyword Violet", "canonical": "#b78cf5", "tonalRamp": ["#160b28", "#251445", "#341d62", "#4a2b8c", "#6a40c4", "#8f61e3", "#b78cf5", "#d6bcfa"] },
+      "syntax-function": { "role": "tertiary", "displayName": "Syntax Function Cyan", "canonical": "#6fd3f0", "tonalRamp": ["#07202a", "#0a3546", "#0d4a62", "#126e8f", "#1d97c0", "#3fb6dd", "#6fd3f0", "#a9e7f8"] },
+      "syntax-type": { "role": "tertiary", "displayName": "Syntax Type Gold", "canonical": "#f2d086", "tonalRamp": ["#221a08", "#3a2c0e", "#523e14", "#78591d", "#a67d2a", "#cfa03f", "#f2d086", "#f9e6bd"] },
+      "syntax-string": { "role": "tertiary", "displayName": "Syntax String Amber", "canonical": "#e2bd6f", "tonalRamp": ["#1f1706", "#35270c", "#4b3812", "#6e521a", "#9a7326", "#c39337", "#e2bd6f", "#f1dcae"] },
+      "syntax-number": { "role": "tertiary", "displayName": "Syntax Number Coral", "canonical": "#ef8f7f", "tonalRamp": ["#260d09", "#3f1710", "#582018", "#7f2f23", "#ad4635", "#d4664f", "#ef8f7f", "#f7bdb2"] },
+      "syntax-comment": { "role": "tertiary", "displayName": "Syntax Comment", "canonical": "#55685f", "tonalRamp": ["#0b100e", "#151c19", "#1f2925", "#2d3b35", "#3f524a", "#55685f", "#7d918a", "#b2c1ba"] },
+      "mark-kotlin": { "role": "tertiary", "displayName": "Kotlin Violet", "canonical": "#a985f5", "tonalRamp": ["#140a26", "#221342", "#301b5e", "#452887", "#633bbe", "#875cdd", "#a985f5", "#cdb6fa"] },
+      "mark-compose": { "role": "tertiary", "displayName": "Compose Green", "canonical": "#4ec9a8", "tonalRamp": ["#05201a", "#08362c", "#0b4b3e", "#106f5b", "#189a7e", "#2eb897", "#4ec9a8", "#8ee0cb"] },
+      "mark-room": { "role": "tertiary", "displayName": "Room Green", "canonical": "#7fd06a", "tonalRamp": ["#0e2009", "#173610", "#204b17", "#2f6f22", "#42992f", "#5eba46", "#7fd06a", "#b0e6a3"] },
+      "mark-retrofit": { "role": "tertiary", "displayName": "Retrofit Amber", "canonical": "#e8a25c", "tonalRamp": ["#241505", "#3c240b", "#543210", "#7b4a18", "#a86722", "#cf8535", "#e8a25c", "#f3c99b"] },
+      "mark-flutter": { "role": "tertiary", "displayName": "Flutter Blue", "canonical": "#46b8f0", "tonalRamp": ["#041c28", "#072f41", "#0a425b", "#0f6285", "#1889b8", "#2ba6da", "#46b8f0", "#8ad5f7"] },
+      "mark-riverpod": { "role": "tertiary", "displayName": "Riverpod Blue", "canonical": "#7fb4f5", "tonalRamp": ["#0a1a2c", "#112b48", "#183c65", "#22588f", "#3179c4", "#5498e0", "#7fb4f5", "#b4d3fa"] },
+      "selection-fg": { "role": "neutral", "displayName": "Selection Foreground", "canonical": "#eafff2", "tonalRamp": ["#17231c", "#2b3d33", "#40584a", "#587463", "#75937f", "#9db9a7", "#c6dccf", "#eafff2"] },
+      "dot-modified": { "role": "neutral", "displayName": "Window Dot — Modified", "canonical": "#3a4436", "tonalRamp": ["#0c0e0b", "#151812", "#1f2419", "#2b3226", "#3a4436", "#4e5a48", "#6b795f", "#94a288"] },
+      "dot-close": { "role": "neutral", "displayName": "Window Dot — Close", "canonical": "#47342f", "tonalRamp": ["#0f0b0a", "#1a1311", "#261b18", "#342521", "#47342f", "#5e463f", "#7e6055", "#a88a7c"] },
+      "scanline": { "role": "neutral", "displayName": "Scanline Black", "canonical": "rgb(0 0 0 / .16)", "tonalRamp": ["rgb(0 0 0 / .04)", "rgb(0 0 0 / .08)", "rgb(0 0 0 / .12)", "rgb(0 0 0 / .16)", "rgb(0 0 0 / .24)", "rgb(0 0 0 / .36)", "rgb(0 0 0 / .52)", "rgb(0 0 0 / .72)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The page headline only. Condensed via the width axis (82%) before ever reducing size. Green, and the one place the phosphor bloom is rendered." },
+      "headline": { "displayName": "Headline", "purpose": "Markdown-pane '##' headings. Green, no glow." },
+      "headline-sm": { "displayName": "Headline Small", "purpose": "Note titles, where three sit in a row and the full headline step would crowd them." },
+      "metric": { "displayName": "Metric", "purpose": "The readout numbers in the GitHub panel — the only large type outside the headline." },
+      "lede": { "displayName": "Lede", "purpose": "The hero subtitle only. The one passage set above body size, because it carries the claim the headline compresses. Max 58ch." },
+      "ui": { "displayName": "UI", "purpose": "Every interactive label — buttons, nav items, note actions, skip link. One step for all control text; a second value 0.01rem away is drift." },
+      "micro": { "displayName": "Micro", "purpose": "Activity-rail captions and the contribution-grid month scale. Ornament and wayfinding only, never a sentence." },
+      "diagram": { "displayName": "Diagram (viewBox units)", "purpose": "Text inside diagram SVGs, sized in viewBox units rather than CSS pixels: 9px box labels, 8px sublabels, 7.5px edge labels. Renders at roughly 9-11 effective px. Not part of the CSS ramp." },
+      "title": { "displayName": "Section Marker", "purpose": "The '// SECTION' band markers. Wide-tracked uppercase, because a comment marker is a label rather than a voice." },
+      "body": { "displayName": "Body", "purpose": "Prose inside panes, held to ~62ch — monospace runs wider per character, so 62ch reads like 70ch of a proportional face." },
+      "code": { "displayName": "Code", "purpose": "Code samples, terminal logs, dependency blocks. Never below 0.66rem; scrolls horizontally instead." },
+      "label": { "displayName": "Label", "purpose": "Status bars, readout keys, chips, activity-rail captions." }
+    },
+    "shadows": [
+      { "name": "pane-rest", "value": "0 1px 0 rgb(255 255 255 / .022), 0 12px 28px -14px rgb(0 0 0 / .92)", "purpose": "Every pane at rest: a 1px top light line plus a deep soft drop. Offset and blur are both required." },
+      { "name": "pane-engaged", "value": "0 1px 0 rgb(255 255 255 / .03), 0 18px 40px -16px rgb(0 0 0 / .96)", "purpose": "On :hover and :focus-within, paired with the border stepping to Hairline Live." },
+      { "name": "phosphor-bloom-display", "value": "text-shadow: 0 0 26px rgb(61 240 138 / .28)", "purpose": "CRT material on green display type. Not depth — never applied to panels, fills, or cards." },
+      { "name": "phosphor-bloom-led", "value": "0 0 8px rgb(61 240 138 / .8)", "purpose": "Status LEDs and timeline nodes: the dot is a light source." },
+      { "name": "rail-active-inset", "value": "inset 0 0 12px rgb(23 160 92 / .18)", "purpose": "The active activity-rail box reads lit from within." }
+    ],
+    "motion": [
+      { "name": "ease-out-exp", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "The system's only easing. Exponential ease-out for the boot sequence and all reveals." },
+      { "name": "state-fast", "value": "160ms", "purpose": "Nav, link, and icon-button colour changes." },
+      { "name": "state-control", "value": "180ms", "purpose": "Button border, ground, and lift." },
+      { "name": "pane-engage", "value": "200ms", "purpose": "Pane border and shadow stepping to engaged." },
+      { "name": "boot-sequence", "value": "2400ms total, scoped to html[data-boot=\"run\"]", "purpose": "One authored moment on load: circuit traces draw (stroke-dashoffset), the headline wipes up behind a scanline sweep, the language meters sweep from zero background-size, the contribution arc unwinds, portrait and readout rise 14px. JS opts in, so the page renders finished without it and skips entirely under prefers-reduced-motion." },
+      { "name": "reveal-settle", "value": "600ms, 55ms stagger capped at 5 items", "purpose": "One settle-in for content that began below the fold. Applied by JS only, never a per-section entrance." },
+      { "name": "caret-blink", "value": "1150ms steps(2, start) infinite", "purpose": "The shell caret in the status bar and terminal panes." },
+      { "name": "led-pulse", "value": "2600ms infinite", "purpose": "The readout panel's live indicator." }
+    ],
+    "breakpoints": [
+      { "name": "mosaic-reflow", "value": "1400px" },
+      { "name": "rail-drop", "value": "1180px" },
+      { "name": "mosaic-two-up", "value": "1080px" },
+      { "name": "mosaic-single", "value": "780px" },
+      { "name": "phone", "value": "720px" },
+      { "name": "phone-narrow", "value": "560px" },
+      { "name": "phone-min", "value": "420px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Terminal Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The primary action, written as a callable with a phosphor prompt sigil.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\"><span class=\"ds-caret\" aria-hidden=\"true\">&gt;_</span>get_in_touch()</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: .55em; padding: 11px 20px; border: 1px solid var(--phos-dim, #17a05c); border-radius: 2px; background: rgb(16 26 23 / .72); color: var(--phos, #3df08a); font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .82rem; text-decoration: none; transition: border-color .18s, background-color .18s, transform .18s; } .ds-btn-primary .ds-caret { color: var(--phos, #3df08a); opacity: .7; } .ds-btn-primary:hover { border-color: #3df08a; background: rgb(23 160 92 / .18); transform: translateY(-1px); } .ds-btn-primary:hover .ds-caret { opacity: 1; } .ds-btn-primary:focus-visible { outline: 2px solid #3df08a; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Terminal Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action. Same geometry, neutral border, dim sigil.",
+      "html": "<button class=\"ds-btn-ghost\" type=\"button\"><span class=\"ds-caret\" aria-hidden=\"true\">&gt;_</span>view_all_repos()</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: .55em; padding: 7px 13px; border: 1px solid #27443a; border-radius: 2px; background: rgb(16 26 23 / .72); color: #dfeae4; font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .74rem; cursor: pointer; transition: border-color .18s, background-color .18s, transform .18s; } .ds-btn-ghost .ds-caret { color: #17a05c; } .ds-btn-ghost:hover { border-color: #17a05c; background: rgb(23 160 92 / .12); transform: translateY(-1px); } .ds-btn-ghost:hover .ds-caret { color: #3df08a; } .ds-btn-ghost:focus-visible { outline: 2px solid #3df08a; outline-offset: 2px; }"
+    },
+    {
+      "name": "Editor Pane",
+      "kind": "custom",
+      "refersTo": "pane",
+      "description": "The signature container: window chrome, an aria-hidden line-number gutter, a syntax-coloured source block, and a status strip. Keyboard-scrollable.",
+      "html": "<article class=\"ds-pane\"><div class=\"ds-pane-bar\"><span class=\"ds-pane-name\">TransactionList.kt</span><span class=\"ds-dots\" aria-hidden=\"true\"><i></i><i></i><i></i></span></div><div class=\"ds-code\" tabindex=\"0\" role=\"group\" aria-label=\"Kotlin sample\"><pre class=\"ds-gut\" aria-hidden=\"true\">1\n2\n3</pre><pre class=\"ds-src\"><code><span class=\"ds-an\">@Composable</span>\n<span class=\"ds-k\">fun</span> <span class=\"ds-f\">TransactionList</span>() {\n}</code></pre></div><div class=\"ds-pane-status\"><span class=\"ds-hot\">NORMAL</span><span>Kotlin</span><span class=\"ds-end\">3:1</span></div></article>",
+      "css": ".ds-pane { display: flex; flex-direction: column; background: #0c1311; border: 1px solid #1b2a25; border-radius: 5px; box-shadow: 0 1px 0 rgb(255 255 255 / .022), 0 12px 28px -14px rgb(0 0 0 / .92); overflow: hidden; font-family: \"JetBrains Mono\", ui-monospace, monospace; transition: border-color .2s, box-shadow .2s; } .ds-pane:hover, .ds-pane:focus-within { border-color: #27443a; box-shadow: 0 1px 0 rgb(255 255 255 / .03), 0 18px 40px -16px rgb(0 0 0 / .96); } .ds-pane-bar { display: flex; align-items: center; gap: 10px; padding: 7px 10px; background: #101a17; border-bottom: 1px solid #1b2a25; } .ds-pane-name { font-size: .7rem; color: #93aaa0; } .ds-dots { margin-left: auto; display: flex; gap: 6px; } .ds-dots i { width: 7px; height: 7px; border-radius: 50%; border: 1px solid #27443a; background: #14201c; } .ds-code { display: flex; overflow: auto; font-size: .68rem; line-height: 1.6; scrollbar-width: thin; scrollbar-color: #27443a transparent; } .ds-gut { margin: 0; padding: 12px 9px 14px 12px; text-align: right; color: #64796f; background: rgb(8 13 11 / .55); border-right: 1px solid #1b2a25; user-select: none; } .ds-src { margin: 0; padding: 12px 14px 14px; white-space: pre; color: #dfeae4; } .ds-k { color: #b78cf5; } .ds-f { color: #6fd3f0; } .ds-an { color: #35d3c4; } .ds-pane-status { display: flex; align-items: center; gap: 16px; padding: 5px 11px; background: #101a17; border-top: 1px solid #1b2a25; font-size: .62rem; letter-spacing: .05em; text-transform: uppercase; color: #93aaa0; } .ds-hot { color: #3df08a; } .ds-end { margin-left: auto; text-transform: none; color: #64796f; }"
+    },
+    {
+      "name": "Readout Panel",
+      "kind": "card",
+      "refersTo": "pane",
+      "description": "Block meters over label/value rows. Each meter block stands for one counted thing; the fill count is set inline.",
+      "html": "<div class=\"ds-pane ds-readout\"><div class=\"ds-pane-bar\"><span class=\"ds-pane-name\">SYSTEM.INFO</span><span class=\"ds-led\" aria-hidden=\"true\"></span></div><div class=\"ds-readout-body\"><ul class=\"ds-meters\"><li><span class=\"ds-mk\">Kotlin</span><span class=\"ds-meter\" style=\"--fill:14\" aria-hidden=\"true\"></span><span class=\"ds-mv\">[9]</span></li><li><span class=\"ds-mk\">Dart</span><span class=\"ds-meter\" style=\"--fill:11\" aria-hidden=\"true\"></span><span class=\"ds-mv\">[7]</span></li></ul><dl class=\"ds-kv\"><dt>PLATFORMS</dt><dd>Android · iOS</dd><dt>ARCH</dt><dd>MVVM · Clean</dd></dl></div></div>",
+      "css": ".ds-readout { font-family: \"JetBrains Mono\", ui-monospace, monospace; } .ds-readout-body { padding: 13px 14px 15px; display: flex; flex-direction: column; gap: 13px; } .ds-led { width: 6px; height: 6px; border-radius: 50%; background: #3df08a; box-shadow: 0 0 8px rgb(61 240 138 / .8); margin-left: auto; } .ds-meters { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; } .ds-meters li { display: grid; grid-template-columns: 4.6em 1fr auto; align-items: center; gap: 9px; } .ds-mk { font-size: .66rem; letter-spacing: .05em; text-transform: uppercase; color: #93aaa0; } .ds-mv { font-size: .66rem; color: #e3b341; } .ds-meter { height: 9px; background-color: rgb(11 76 45 / .42); background-image: repeating-linear-gradient(90deg, #3df08a 0 5px, transparent 5px 8px); background-repeat: no-repeat; background-size: calc(var(--fill, 10) * 8px) 100%; box-shadow: 0 0 10px -2px rgb(61 240 138 / .34); } .ds-kv { display: grid; grid-template-columns: auto 1fr; gap: 5px 10px; margin: 0; border-top: 1px solid #1b2a25; padding-top: 12px; } .ds-kv dt { font-size: .62rem; letter-spacing: .07em; color: #17a05c; } .ds-kv dd { margin: 0; font-size: .68rem; color: #dfeae4; text-align: right; }"
+    },
+    {
+      "name": "Section Marker",
+      "kind": "custom",
+      "refersTo": "title",
+      "description": "A band heading written as a source comment, on a hairline rule.",
+      "html": "<div class=\"ds-band-head\"><h2 class=\"ds-mark\"><i aria-hidden=\"true\">//</i>PROJECTS</h2></div>",
+      "css": ".ds-band-head { display: flex; align-items: center; gap: 22px; padding-bottom: 14px; border-bottom: 1px solid #1b2a25; } .ds-mark { display: flex; align-items: baseline; gap: .5em; margin: 0; font-family: \"Martian Mono\", ui-monospace, monospace; font-size: .95rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #dfeae4; } .ds-mark i { font-style: normal; color: #17a05c; }"
+    },
+    {
+      "name": "Honesty Chip",
+      "kind": "chip",
+      "refersTo": "chip-caution",
+      "description": "Amber marker meaning 'not verified yet'. Used for the draft state and for sample data, and for nothing else.",
+      "html": "<span class=\"ds-chip-draft\"><span class=\"ds-chip-dot\" aria-hidden=\"true\"></span>draft</span> <span class=\"ds-chip-sample\">sample data</span>",
+      "css": ".ds-chip-draft, .ds-chip-sample { display: inline-flex; align-items: center; gap: 6px; font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: #e3b341; border: 1px solid rgb(227 179 65 / .32); padding: 3px 8px; border-radius: 2px; } .ds-chip-dot { width: 5px; height: 5px; border-radius: 50%; background: #e3b341; box-shadow: 0 0 7px rgb(227 179 65 / .7); }"
+    },
+    {
+      "name": "Section Navigation",
+      "kind": "nav",
+      "refersTo": "title",
+      "description": "Bracketed index plus lowercase label. Active state is a phosphor underline, never a filled pill.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Sections\"><a href=\"#about\" class=\"ds-active\"><i>[01]</i>about</a><a href=\"#projects\"><i>[02]</i>projects</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 16px; font-family: \"JetBrains Mono\", ui-monospace, monospace; } .ds-nav a { display: inline-flex; align-items: baseline; gap: .45em; font-size: .76rem; color: #93aaa0; text-decoration: none; padding: 4px 2px; border-bottom: 1px solid transparent; transition: color .16s, border-color .16s; } .ds-nav i { font-style: normal; font-size: .68rem; color: #64796f; transition: color .16s; } .ds-nav a:hover, .ds-nav a.ds-active { color: #dfeae4; border-bottom-color: #3df08a; } .ds-nav a:hover i, .ds-nav a.ds-active i { color: #3df08a; } .ds-nav a:focus-visible { outline: 2px solid #3df08a; outline-offset: 2px; }"
+    },
+    {
+      "name": "Shell Status Bar",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "The page footer as a live shell prompt with a blinking block caret.",
+      "html": "<p class=\"ds-prompt\"><span class=\"ds-pr\">developer@portfolio</span><span class=\"ds-pt\">:~$</span> <span class=\"ds-typed\">cat PLACEHOLDERS.md</span><span class=\"ds-caret-blink\" aria-hidden=\"true\"></span></p>",
+      "css": ".ds-prompt { display: flex; align-items: baseline; gap: .35em; margin: 0; padding: 10px 14px; background: rgb(6 10 9 / .94); border-top: 1px solid #1b2a25; font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .68rem; white-space: nowrap; } .ds-pr { color: #3df08a; } .ds-pt { color: #6fd3f0; } .ds-typed { color: #93aaa0; } .ds-caret-blink { display: inline-block; width: .55em; height: 1.05em; background: #3df08a; vertical-align: text-bottom; animation: ds-blink 1.15s steps(2, start) infinite; } @keyframes ds-blink { 50% { opacity: 0; } } @media (prefers-reduced-motion: reduce) { .ds-caret-blink { animation: none; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Workspace, Not the Résumé",
+    "overview": "This system does not describe a developer's environment; it is one. Every container on the page is a window from a working machine — a title strip with a filename, a gutter of line numbers, a status bar reading NORMAL Kotlin utf-8 19:1. Sections open with a // comment marker rather than a heading rule. The page footer is a live shell prompt with a blinking caret and a running clock. The visitor is not reading a pitch about competence; they are looking over a shoulder at the machine where the work happens.\n\nThe register is engineer-to-engineer: dark, dense, technically literal, dry. Phosphor green on near-black is the whole emotional range, and that narrowness is the point — where a marketing site would reach for a second brand colour, this system reaches for a hairline, a status bar, or a line number. Colour that is not green is reserved almost entirely for syntax, where violet, cyan, and amber mean keyword, type, and string rather than brand. Green is interface; the polychrome belongs to code.\n\nDensity is deliberately high and deliberately uneven. A wide editor sits beside a narrow layer diagram; a twenty-line code sample sits beside a four-row terminal log. Nothing is a card of equal size, because an IDE is never a grid of equal panels. Confirmed anti-reference: the conventional candidate site — centred hero, three identical feature cards, soft gradient, pastel accent, a portrait floating on white.",
+    "keyCharacteristics": [
+      "Every container is window chrome: title strip, body, status bar.",
+      "Two monospace voices — one wide and structural, one built for code.",
+      "Green is the interface; syntax colour is the only polychrome.",
+      "Hairlines (1px) do the work that shadows and fills do elsewhere.",
+      "Unequal spans over equal cards; an editor is wider than a diagram.",
+      "Placeholder content uses [BRACKET_CASE], which reads as template syntax and is therefore native to the world instead of looking broken."
+    ],
+    "rules": [
+      { "name": "The Four-Channel Colour Rule", "body": "Every hue on the page belongs to exactly one of four channels: green for interface, state, and structure; syntax (violet, cyan, gold, amber, coral) inside code only; amber for unverified content; and technology marks on icons only. A hue that serves none of these four is decoration and breaks the system.", "section": "colors" },
+      { "name": "The Amber-Means-Unverified Rule", "body": "Amber is reserved for honesty markers. If a number, employer, or metric is not yet real, it is amber or bracketed. Never style real content amber.", "section": "colors" },
+      { "name": "The Faint-Text Rule", "body": "#64796f is for line numbers and ornament. If a reader needs to read it, it is at least #93aaa0.", "section": "colors" },
+      { "name": "The Width-Before-Size Rule", "body": "When the display headline does not fit, reduce font-stretch toward 75% before reducing font-size. Scale is the design; width is the adjustment.", "section": "typography" },
+      { "name": "The Two-Voices Rule", "body": "Martian Mono never sets body copy or code; JetBrains Mono never sets the display headline. A third family is a system violation.", "section": "typography" },
+      { "name": "The Legible-Floor Rule", "body": "Monospace body copy never goes below 0.8rem and code never below 0.675rem. When a code sample will not fit, it scrolls horizontally inside its pane — the aesthetic does not get to cost legibility.", "section": "typography" },
+      { "name": "The One-Step-Per-Job Rule", "body": "Each job takes exactly one step. All control text is UI (0.74rem); all code is Code (0.68rem). A new size within 0.03rem of an existing step is not a decision, it is drift — reuse the step.", "section": "typography" },
+      { "name": "The One-Control-Radius Rule", "body": "Anything control-sized is 3px. A 4px sibling next to a 3px one is drift, not a variant.", "section": "shapes" },
+      { "name": "The Measure-Over-Columns Rule", "body": "Code panes lose grid columns before they lose measure. A layout that fits more panes by clipping identifiers has failed.", "section": "layout" },
+      { "name": "The Thesis-First Rule", "body": "On any viewport where the portrait would push the headline out of the first screen, the headline moves above it. The first viewport carries the claim.", "section": "layout" },
+      { "name": "The Hairline-First Rule", "body": "Reach for a 1px border or a tonal step before reaching for a shadow. If a new element needs a shadow to read, the layering is wrong.", "section": "elevation" },
+      { "name": "The Bloom-Is-Material Rule", "body": "Glow is the phosphor, not a highlight. It appears on green light sources only. A glow on a panel, a card, or a button fill is decoration and is out.", "section": "elevation" },
+      { "name": "The One-Pixel Rule", "body": "Every border in the system is 1px. A 2px or 3px border, and any coloured side stripe above 1px, is out.", "section": "shapes" },
+      { "name": "The Window Rule", "body": "Any new content container inherits pane chrome — title strip with a name, body, status strip where there is something true to report. A bare rounded rectangle is not part of this system.", "section": "shapes" },
+      { "name": "The Callable-Label Rule", "body": "Interactive labels are written as function calls or file paths, in the site's own language. A button reading \"Learn more\" does not belong here.", "section": "components" },
+      { "name": "The No-Fake-Controls Rule", "body": "Window dots, brackets, and chrome are decorative and are hidden from assistive technology. Anything that looks pressable must do something.", "section": "components" }
+    ],
+    "dos": [
+      "Do wrap every new content region in pane chrome — a named title strip, a body, and a status strip when there is something true to report.",
+      "Do carry depth with 1px hairlines and the three-step panel ramp; add a shadow only to lift a whole pane, always with offset and blur.",
+      "Do condense the display face via font-stretch (toward 75%) before reducing its size.",
+      "Do keep every hue in one of the four channels — green interface, code syntax, amber honesty, technology marks on icons.",
+      "Do reuse an existing type step rather than adding one within 0.03rem of it.",
+      "Do mark anything unverified in amber or [BRACKET_CASE], and keep the draft and sample data chips until the content behind them is real.",
+      "Do draw new icons as SVG on the existing 24px grid at 1.4–1.6 stroke width.",
+      "Do let code scroll horizontally inside its pane rather than shrinking below 0.66rem or wrapping mid-expression.",
+      "Do keep the boot sequence scoped to html[data-boot=\"run\"] so the page renders finished without JavaScript, and keep every animation gated on prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't introduce a hue outside the four channels, and don't let a technology-mark tint escape onto text, borders, or fills.",
+      "Don't use a border, divider, or side stripe thicker than 1px, or a 4px radius on a control that sits beside a 3px one.",
+      "Don't put a glow on a panel, button fill, or card — bloom belongs to green light sources only.",
+      "Don't lay out content as a row of equal-size cards; spans are unequal and assigned by what the content needs.",
+      "Don't set body copy or code in Martian Mono, or the display headline in JetBrains Mono, and don't add a third family.",
+      "Don't use #64796f for anything a reader must read.",
+      "Don't ship a control that looks pressable and isn't, and don't give the decorative window dots interactive semantics.",
+      "Don't load a font, script, or image from a third-party origin; this project is self-hosted end to end.",
+      "Don't present a number as real while it is still a placeholder — delete the row instead."
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+# ── personal data ────────────────────────────────────────────────────────────
+# This repo is PUBLIC. Everything tracked here is world-readable forever, even
+# after a later delete — GitHub keeps orphaned objects and forks/caches persist.
+#
+# DATA-NEEDED.md is the content worksheet. Once filled it holds real name,
+# location, email, employers, and dates in one tidy file. It stays local.
+DATA-NEEDED.md
+
+# Uncomment if you'd rather not publish the product/strategy notes either.
+# They currently contain no personal data, so publishing them is safe.
+# PRODUCT.md
+# .impeccable/surfaces/
+
+# ── agent tooling (local installs, not part of the site) ─────────────────────
+.claude/
+.agents/
+.codex/
+.cursor/
+.gemini/
+
+# Impeccable local state. DESIGN.md's sidecar and the surface brief ARE kept —
+# they are the design system future sessions read.
+.impeccable/config.local.json
+.impeccable/hook.cache.json
+.impeccable/mocks/
+.impeccable/sketches/
+.impeccable/live/
+
+# ── working files ────────────────────────────────────────────────────────────
+# The pinned design reference. 1.5 MB and not needed to serve the site.
+inspiration.png
+
+# Temp preview scaffolds
+_*.html
+
+# ── environment noise ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+node_modules/
+.vscode/
+.idea/
+*.swp
+*~

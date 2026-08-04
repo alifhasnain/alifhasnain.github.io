@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" data-boot="pending">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[YOUR_NAME] — Senior Mobile App Developer</title>
+<meta name="description" content="Senior Mobile App Developer building production Android and Flutter apps. Kotlin, Jetpack Compose, Dart, Riverpod, clean architecture.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#080d0b">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="[YOUR_NAME] — Senior Mobile App Developer">
+<meta property="og:description" content="Production Android and Flutter. Kotlin, Compose, Dart, Riverpod, clean architecture.">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/martian-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body id="top">
+
+<!--
+  THESIS: A portfolio that is the engineer's own working environment, not a page about
+  one. Refuses the centered-hero / three-identical-cards / soft-gradient candidate site.
+  OWN-WORLD: Phosphor green (#3df08a) on near-black (#080d0b). Every container is IDE
+  window chrome: title strip, gutter with line numbers, status bar. Martian Mono display,
+  JetBrains Mono code. Hairline rules (#1b2a25), circuit-trace ground, authored SVG icons.
+  STORY: A tech lead sees real Kotlin and real Dart in the first two screens, reads a
+  stated point of view on choosing between them, and leaves with the email or the resume.
+  FIRST VIEWPORT: Fixed top bar + left activity rail. Portrait pane left, compiling
+  <h1> centre at clamp max 3.95rem green (82% width axis), SYSTEM.INFO readout right.
+  Primary action get_in_touch() sits under the mission string; resume.pdf is pinned
+  top-right at every scroll depth. On phones the headline moves above the portrait.
+  FORM: Brief-pinned by inspiration.png ("follow this"); pinned direction beats the roll,
+  so no concept-seed key exists for this build.
+  FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
+
+<a class="skiplink" href="#main">Skip to content</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><path d="M3 4.5h18v15H3z"/><path d="m6.8 10.2 2.4 2.3-2.4 2.3"/><path d="M12.4 14.8h4.6"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20.2c.6-3.6 3.4-5.6 7-5.6s6.4 2 7 5.6"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6.4h6l1.8 2.2H21v10.6H3z"/><path d="M3 11.6h18"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 8.4 4.4L12 11.8 3.6 7.4z"/><path d="m4.4 12.4 7.6 4 7.6-4"/><path d="m4.4 16.8 7.6 4 7.6-4"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M3 8.4h18v11.2H3z"/><path d="M9 8.4V5.6h6v2.8"/><path d="M3 13.4h18"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24"><path d="M5.4 3.4h9.2L19 7.8v12.8H5.4z"/><path d="M14.2 3.6v4.4H18.8"/><path d="M8.4 12.4h7"/><path d="M8.4 16.2h4.6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5.6h18v12.8H3z"/><path d="m3.6 6.4 8.4 6.4 8.4-6.4"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9.3 20.6v-2.9c-3 .5-3.8-1.3-3.8-1.3-.5-1.2-1.2-1.6-1.2-1.6-1-.7 0-.7 0-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.4-.3-4.9-1.2-4.9-5.3 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.4.1-2.8 0 0 1-.3 3.2 1.1a8.6 8.6 0 0 1 4.6 0c2.2-1.4 3.2-1.1 3.2-1.1.6 1.4.2 2.5.1 2.8.7.8 1.1 1.7 1.1 2.9 0 4.1-2.5 5-4.9 5.3.4.4.7 1.1.7 2.2v3.8"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 10.4v6.2"/><path d="M8 7.6v.2"/><path d="M11.6 16.6v-6.2"/><path d="M11.6 13.2c0-1.6.9-2.6 2.3-2.6s2.2 1 2.2 2.6v3.4"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19.4V5.2"/><path d="m5.8 11.4 6.2-6.2 6.2 6.2"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><path d="M9 9h11v11.4H9z"/><path d="M15.6 9V3.6H4.4V15h5.2"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M13.4 4.6H19.4v6"/><path d="M19 5 11 13"/><path d="M18.2 14v5.4H4.6V5.8H10"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3.4h8L18.6 8v12.6H6z"/><path d="M13.6 3.6V8h4.8"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.8 4.4 4.4L19 7.6"/></symbol>
+
+    <symbol id="t-kotlin" viewBox="0 0 24 24"><path d="M3 3h18l-9 9 9 9H3z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="t-compose" viewBox="0 0 24 24"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="4.4"/><rect x="8" y="8" width="8" height="8" rx="2.2" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="t-coroutines" viewBox="0 0 24 24"><path d="M3.4 15.6c0-3.4 2-5.2 4.3-5.2s4.3 1.8 4.3 5.2"/><path d="M12 15.6c0-3.4 2-5.2 4.3-5.2s4.3 1.8 4.3 5.2"/><path d="M6.2 19.4h11.6"/></symbol>
+    <symbol id="t-flow" viewBox="0 0 24 24"><path d="M3.6 8.4h10.8"/><path d="m11.6 5.4 3 3-3 3"/><path d="M20.4 15.6H9.6"/><path d="m12.4 12.6-3 3 3 3"/></symbol>
+    <symbol id="t-hilt" viewBox="0 0 24 24"><path d="M4.4 4.4h15.2L13.8 12v7.6h-3.6V12z"/></symbol>
+    <symbol id="t-room" viewBox="0 0 24 24"><ellipse cx="12" cy="6.6" rx="7.6" ry="2.8"/><path d="M4.4 6.6v10.8c0 1.6 3.4 2.8 7.6 2.8s7.6-1.2 7.6-2.8V6.6"/><path d="M4.4 12c0 1.6 3.4 2.8 7.6 2.8s7.6-1.2 7.6-2.8"/></symbol>
+    <symbol id="t-retrofit" viewBox="0 0 24 24"><path d="M3.6 8h13.2"/><path d="m14.2 5.2 2.8 2.8-2.8 2.8"/><path d="M20.4 16h-13.2"/><path d="m9.8 13.2-2.8 2.8 2.8 2.8"/><circle cx="12" cy="12" r=".9" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="t-flutter" viewBox="0 0 24 24"><path d="M14.8 2 4.4 12.4l3.2 3.2L21.2 2z" fill="currentColor" stroke="none"/><path d="M14.8 22 8.6 15.8l3.2-3.2L18 18.8z" fill="currentColor" stroke="none" opacity=".62"/></symbol>
+    <symbol id="t-dart" viewBox="0 0 24 24"><path d="M4 13.6 13.6 4l6.4 6.4-9.6 9.6z" fill="currentColor" stroke="none" opacity=".62"/><path d="M4 13.6 10.4 20h9.6L4 13.6z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="t-riverpod" viewBox="0 0 24 24"><path d="M12 3.4 18.6 14a6.6 6.6 0 1 1-13.2 0z"/><path d="M12 9.6v6"/></symbol>
+    <symbol id="t-firebase" viewBox="0 0 24 24"><path d="m5.2 18.4 3-15 3.6 6.4 2.8-3.2 4.2 11.8z"/><path d="m5.2 18.4 6.8 3.4 6.8-3.4"/></symbol>
+    <symbol id="t-git" viewBox="0 0 24 24"><circle cx="6.4" cy="6.4" r="2.4"/><circle cx="6.4" cy="17.6" r="2.4"/><circle cx="17.6" cy="12" r="2.4"/><path d="M6.4 8.8v6.4"/><path d="M8.6 7.4c4.6 0 6.6 1.6 6.6 4.6"/></symbol>
+    <symbol id="t-cicd" viewBox="0 0 24 24"><path d="M20.2 12a8.2 8.2 0 0 1-14 5.8"/><path d="M3.8 12a8.2 8.2 0 0 1 14-5.8"/><path d="M17.4 2.6v3.8h-3.8"/><path d="M6.6 21.4v-3.8h3.8"/></symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="Home">
+    <span class="brand__mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="m5.4 8 3.4 3.4L5.4 15" /><path d="M12 16.4h6.6"/></svg>
+    </span>
+    <span class="brand__path"><span class="brand__dir">/dev/</span>portfolio</span>
+  </a>
+
+  <nav class="nav" aria-label="Sections">
+    <a href="#about"><i>[01]</i>about</a>
+    <a href="#projects"><i>[02]</i>projects</a>
+    <a href="#skills"><i>[03]</i>skills</a>
+    <a href="#experience"><i>[04]</i>experience</a>
+    <a href="#notes"><i>[05]</i>notes</a>
+    <a href="#contact"><i>[06]</i>contact</a>
+  </nav>
+
+  <div class="topbar__end">
+    <span class="draftchip" title="Placeholder content — see PLACEHOLDERS.md">
+      <span class="dot" aria-hidden="true"></span>draft
+    </span>
+    <a class="iconbtn" href="https://github.com/[YOUR_HANDLE]" aria-label="GitHub"><svg><use href="#i-github"/></svg></a>
+    <a class="iconbtn" href="https://linkedin.com/in/[YOUR_HANDLE]" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+    <a class="iconbtn iconbtn--keep" href="mailto:[YOU]@[DOMAIN]" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+    <a class="termbtn termbtn--hot" href="assets/[YOUR_NAME]-resume.pdf" download>
+      <span class="termbtn__caret" aria-hidden="true">&gt;_</span>resume.pdf
+    </a>
+  </div>
+</header>
+
+<aside class="rail" aria-label="Quick navigation">
+  <ul>
+    <li><a href="#top" data-rail="top" class="is-active"><span class="rail__box"><svg><use href="#i-terminal"/></svg></span><span class="rail__label">terminal</span></a></li>
+    <li><a href="#about" data-rail="about"><span class="rail__box"><svg><use href="#i-user"/></svg></span><span class="rail__label">about me</span></a></li>
+    <li><a href="#projects" data-rail="projects"><span class="rail__box"><svg><use href="#i-folder"/></svg></span><span class="rail__label">projects</span></a></li>
+    <li><a href="#skills" data-rail="skills"><span class="rail__box"><svg><use href="#i-layers"/></svg></span><span class="rail__label">skills</span></a></li>
+    <li><a href="#experience" data-rail="experience"><span class="rail__box"><svg><use href="#i-briefcase"/></svg></span><span class="rail__label">experience</span></a></li>
+    <li><a href="#notes" data-rail="notes"><span class="rail__box"><svg><use href="#i-note"/></svg></span><span class="rail__label">notes</span></a></li>
+    <li><a href="#github" data-rail="github"><span class="rail__box"><svg><use href="#i-github"/></svg></span><span class="rail__label">github</span></a></li>
+    <li><a href="#contact" data-rail="contact"><span class="rail__box"><svg><use href="#i-mail"/></svg></span><span class="rail__label">contact</span></a></li>
+  </ul>
+</aside>
+
+<main id="main">
+
+  <!-- ══ HERO ═══════════════════════════════════════════════════════════ -->
+  <section class="hero" id="terminal" aria-labelledby="hero-title">
+    <svg class="traces" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <g class="traces__g">
+        <path d="M0 60h180l28 28h150"/><path d="M0 150h96l24-24h210l30 30h120"/>
+        <path d="M1200 74h-190l-26 26H860l-28-28H690"/><path d="M1200 190h-120l-30-30H900"/>
+        <path d="M0 300h150l26 26h190"/><path d="M1200 330h-210l-28-28h-160"/>
+        <path d="M420 420v-70l30-30h150"/><path d="M760 420v-60l-26-26H600"/>
+        <path d="M300 0v70l26 26h120"/><path d="M900 0v54l-28 28H740"/>
+      </g>
+      <g class="traces__n">
+        <rect x="355" y="84" width="6" height="6"/><rect x="597" y="177" width="6" height="6"/>
+        <rect x="687" y="71" width="6" height="6"/><rect x="897" y="157" width="6" height="6"/>
+        <rect x="363" y="323" width="6" height="6"/><rect x="777" y="299" width="6" height="6"/>
+        <rect x="597" y="317" width="6" height="6"/><rect x="443" y="93" width="6" height="6"/>
+      </g>
+    </svg>
+
+    <figure class="pane pane--shot portrait">
+      <div class="pane__bar">
+        <span class="pane__name"><svg class="pane__ico" aria-hidden="true"><use href="#i-doc"/></svg>ENGINEER_IO.PNG</span>
+        <span class="pane__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      </div>
+      <div class="portrait__frame">
+        <span class="portrait__bracket portrait__bracket--tl" aria-hidden="true"></span>
+        <span class="portrait__bracket portrait__bracket--br" aria-hidden="true"></span>
+        <img src="assets/img/portrait-placeholder.svg" alt="Portrait placeholder — replace with a photo of [YOUR_NAME]" width="620" height="720">
+      </div>
+      <figcaption class="pane__foot">
+        <span class="led" aria-hidden="true"></span>STATUS: ONLINE
+        <span class="pane__foot-end">620×720</span>
+      </figcaption>
+    </figure>
+
+    <div class="hero__mid">
+      <p class="tagmark" aria-hidden="true">&lt;h1&gt;</p>
+      <h1 id="hero-title" class="hero__title">
+        <span class="wipe"><span>Senior Mobile</span></span>
+        <span class="wipe"><span>App Developer</span></span>
+      </h1>
+      <p class="tagmark" aria-hidden="true">&lt;/h1&gt;</p>
+
+      <p class="hero__lede">
+        Shipping production apps on two stacks:
+        <a class="clink" href="#skills">Kotlin</a>, <a class="clink" href="#skills">Jetpack&nbsp;Compose</a>,
+        and <a class="clink" href="#skills">Flutter</a>, with architecture that survives the second year.
+      </p>
+
+      <pre class="hero__mission"><code><span class="k">val</span> <span class="v">mission</span> = <span class="s">"Pick the platform on purpose.</span>
+<span class="s">           Own the seams. Ship what holds."</span></code></pre>
+
+      <div class="hero__cta">
+        <a class="termbtn termbtn--hot termbtn--lg" href="#projects"><span class="termbtn__caret" aria-hidden="true">&gt;_</span>view_projects()</a>
+        <a class="termbtn termbtn--lg" href="#contact"><span class="termbtn__caret" aria-hidden="true">&gt;_</span>get_in_touch()</a>
+      </div>
+    </div>
+
+    <div class="pane sysinfo">
+      <div class="pane__bar">
+        <span class="pane__name">SYSTEM.INFO</span>
+        <span class="led led--pulse" aria-hidden="true"></span>
+      </div>
+      <div class="sysinfo__body">
+        <p class="sysinfo__cap">language share <span class="sample">// sample</span></p>
+        <ul class="meters">
+          <li><span class="meters__k">Kotlin</span><span class="meter" style="--fill:14" aria-hidden="true"></span><span class="meters__v">[9]</span></li>
+          <li><span class="meters__k">Dart</span><span class="meter" style="--fill:11" aria-hidden="true"></span><span class="meters__v">[7]</span></li>
+          <li><span class="meters__k">Swift</span><span class="meter" style="--fill:5" aria-hidden="true"></span><span class="meters__v">[3]</span></li>
+        </ul>
+        <dl class="kv">
+          <dt>SHIPPED</dt><dd>[N] apps</dd>
+          <dt>PLATFORMS</dt><dd>Android · iOS</dd>
+          <dt>UI</dt><dd>Compose · Flutter</dd>
+          <dt>ARCH</dt><dd>MVVM · MVI · Clean</dd>
+          <dt>CI</dt><dd>GH Actions · Fastlane</dd>
+          <dt>BASED</dt><dd>[YOUR_CITY]</dd>
+        </dl>
+        <p class="sysinfo__status"><span class="led" aria-hidden="true"></span>open to senior mobile roles</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ══════════════════════════════════════════════════════════ -->
+  <section class="band" id="about" aria-labelledby="about-h">
+    <div class="band__head">
+      <h2 class="mark" id="about-h"><i aria-hidden="true">//</i>ABOUT</h2>
+      <a class="termbtn" href="assets/[YOUR_NAME]-resume.pdf" download><span class="termbtn__caret" aria-hidden="true">&gt;_</span>download_cv()</a>
+    </div>
+
+    <div class="grid grid--about">
+      <article class="pane">
+        <div class="pane__bar">
+          <span class="pane__name"><svg class="pane__ico" aria-hidden="true"><use href="#i-note"/></svg>README.md</span>
+          <span class="pane__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        </div>
+        <div class="md">
+          <h3 class="md__h1"># [YOUR_NAME]</h3>
+          <p>Senior Mobile App Developer, [YOUR_CITY]. [N] years shipping Android and Flutter to production, currently at <span class="warn">[COMPANY_A]</span>.</p>
+          <h4 class="md__h2">## How I work</h4>
+          <ul class="md__list">
+            <li>Architecture before features. A screen is a weekend; the seam between data and UI is where an app rots.</li>
+            <li>One immutable stream per screen. If two things can disagree about state, eventually they will.</li>
+            <li>If a rule needs an emulator to test, the boundary is in the wrong place.</li>
+            <li>Release engineering is product work: signing, staged rollout, crash budget, and a rollback someone has actually rehearsed.</li>
+          </ul>
+        </div>
+        <div class="pane__status"><span>MARKDOWN</span><span>utf-8</span><span class="pane__status-end">18:1</span></div>
+      </article>
+
+      <article class="pane">
+        <div class="pane__bar">
+          <span class="pane__name"><svg class="pane__ico" aria-hidden="true"><use href="#i-note"/></svg>platform_choice.md</span>
+          <span class="pane__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        </div>
+        <div class="md">
+          <h3 class="md__h1">## Choosing the platform</h3>
+          <p>Flutter is not a cheaper Android. Native is not a safer default. It is a product decision, and I make it out loud.</p>
+          <p class="md__pick"><b>Native · Kotlin + Compose</b><br>When the app lives close to the OS: background work, widgets, Wear and Auto surfaces, tight camera or sensor paths — or when the domain belongs in a shared KMP module the backend team also reads.</p>
+          <p class="md__pick"><b>Flutter</b><br>When one team must hold two stores on one deadline, when the design system is bespoke enough that platform widgets fight it, or when custom rendering <em>is</em> the product.</p>
+          <blockquote class="md__quote">&gt; What I refuse: rewriting a working native app so it looks modern on an architecture slide.</blockquote>
+        </div>
+        <div class="pane__status"><span>MARKDOWN</span><span>utf-8</span><span class="pane__status-end">14:1</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══ PROJECTS ═══════════════════════════════════════════════════════ -->
+  <section class="band" id="projects" aria-labelledby="projects-h">
+    <div class="band__head">
+      <h2 class="mark" id="projects-h"><i aria-hidden="true">//</i>PROJECTS</h2>
+      <p class="band__note"><span class="sample">// code below is authored sample; swap for your repos</span></p>
+      <a class="termbtn" href="https://github.com/[YOUR_HANDLE]?tab=repositories"><span class="termbtn__caret" aria-hidden="true">&gt;_</span>view_all_repos()</a>
+    </div>
+
+    <div class="mosaic">
+
+      <article class="pane pane--a">
+        <div class="pane__bar">
+          <span class="pane__name"><svg class="pane__ico tint-k" aria-hidden="true"><use href="#t-kotlin"/></svg>TransactionList.kt</span>
+          <span class="pane__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        </div>
+        <div class="code" tabindex="0" role="group" aria-label="Kotlin sample: TransactionList composable">
+<pre class="code__gut" aria-hidden="true">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre>
+<pre class="code__src"><code><span class="an">@Composable</span>
+<span class="k">fun</span> <span class="f">TransactionList</span>(
+    viewModel: <span class="t">TransactionViewModel</span> = <span class="f">hiltViewModel</span>(),
+) {
+    <span class="k">val</span> state <span class="k">by</span> viewModel.state
+        .<span class="f">collectAsStateWithLifecycle</span>()
+
+    <span class="f">LazyColumn</span>(
+        modifier = <span class="t">Modifier</span>.<span class="f">fillMaxSize</span>(),
+        contentPadding = <span class="f">PaddingValues</span>(<span class="n">16</span>.dp),
+    ) {
+        <span class="f">items</span>(
+            items = state.transactions,
+            key = { it.<span class="p">id</span> },
+        ) { txn -&gt;
+            <span class="f">TransactionRow</span>(txn)
+        }
+    }
+}</code></pre>
+        </div>
+        <div class="pane__status"><span class="hot">NORMAL</span><span>Kotlin</span><span>utf-8</span><span class="pane__status-end">19:1</span></div>
+      </article>
+
+      <article class="pane pane--b">
+        <div class="pane__bar">
+          <span class="pane__name"><svg class="pane__ico" aria-hidden="true"><use href="#i-layers"/></svg>architecture.dio</span>
+          <span class="pane__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        </div>
+        <div class="dgm">
+          <svg viewBox="0 0 220 330" role="img" aria-label="Clean architecture layers: UI Compose to ViewModel to two Use Cases to Repository to local and remote data sources.">
+            <g class="dgm__wire">
+              <path d="M110 44v22"/><path d="M110 100v16"/>
+              <path d="M60 116v0"/><path d="M110 116h-48v16"/><path d="M110 116h48v16"/>
+              <path d="M62 166v16h96v-16"/><path d="M110 182v18"/>
+              <path d="M110 234v16h-48v14"/><path d="M110 250h48v14"/>
+            </g>
+            <g class="dgm__box">
+              <rect x="34" y="18" width="152" height="26" rx="3"/><text x="110" y="35">UI (Compose)</text>
+              <rect x="46" y="66" width="128" height="26" rx="3"/><text x="110" y="83">ViewModel</text>
+              <rect x="16" y="132" width="92" height="34" rx="3"/><text x="62" y="153">Use Case</text>
+              <rect x="112" y="132" width="92" height="34" rx="3"/><text x="158" y="153">Use Case</text>
+              <rect x="46" y="200" width="128" height="26" rx="3"/><text x="110" y="217">Repository</text>
+            </g>
+            <g class="dgm__box dgm__box--leaf">
+              <rect x="12" y="264" width="94" height="38" rx="3"/><text x="59" y="280">Local</text><text x="59" y="293">Room</text>
+              <rect x="114" y="264" width="94" height="38" rx="3"/><text x="161" y="280">Remote</text><text x="161" y="293">Retrofit</text>
+            </g>
+          </svg>
+        </div>
+        <div class="pane__status"><span>DIAGRAM</span><span class="pane__status-end">5 layers</span></div>
+      </article>
+
+      <article class="pane pane--c">
+        <div class="pane__bar">
+          <span class="pane__name"><svg class="pane__ico tint-f" aria-hidden="true"><use href="#t-flutter"/></svg>transaction_list.dart</span>
+          <span class="pane__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        </div>
+        <div class="code" tabindex="0" role="group" aria-label="Dart sample: TransactionList consumer widget">
+<pre class="code__gut" aria-hidden="true">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre>
+<pre class="code__src"><code><span class="k">class</span> <span class="t">TransactionList</span> <span class="k">extends</span> <span class="t">ConsumerWidget</span> {
+  <span class="k">const</span> <span class="f">TransactionList</span>({<span class="k">super</span>.key});
+
+  <span class="an">@override</span>
+  <span class="t">Widget</span> <span class="f">build</span>(<span class="t">BuildContext</span> c, <span class="t">WidgetRef</span> ref) {
+    <span class="k">final</span> state = ref.<span class="f">watch</span>(transactionsProvider);
+
+    <span class="k">return</span> state.<span class="f">when</span>(
+      loading: () =&gt; <span class="k">const</span> <span class="f">TxnSkeleton</span>(),
+      error: (e, _) =&gt; <span class="f">ErrorView</span>(
+        message: <span class="s">'$e'</span>,
+        onRetry: ref.<span class="f">read</span>(txnRefresh),
+      ),
+      data: (items) =&gt; <span class="f">ListView</span>.<span class="f">builder</span>(
+        itemCount: items.length,
+        itemBuilder: (c, i) =&gt;
+            <span class="f">TransactionRow</span>(items[i]),
+      ),
+    );
+  }
+}</code></pre>
+        </div>
+        <div class="pane__status"><span class="hot">NORMAL</span><span>Dart</span><span>utf-8</span><span class="pane__status-end">21:1</span></div>
+      </article>
+
+      <article class="pane pane--d">
+        <div class="pane__bar">
+          <span class="pane__name"><svg class="pane__ico" aria-hidden="true"><use href="#i-layers"/></svg>DataFlow.dio</span>
+          <span class="pane__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        </div>
+        <div class="dgm">
+          <svg viewBox="0 0 480 190" role="img" aria-label="Unidirectional data flow: user action into Compose UI, into ViewModel holding StateFlow, into Repository, which reads Room and Retrofit and returns state.">
+            <g class="dgm__wire">
+              <path d="M84 62h44"/><path d="M244 62h44"/>
+              <path d="M348 82v22H244"/><path d="M196 104h-8v-22"/>
+              <path d="M196 104v26h180"/><path d="M376 130v-26"/>
+              <path d="M196 130H108v-26"/>
+            </g>
+            <g class="dgm__lab">
+              <rect x="92" y="30" width="44" height="15" rx="2"/><text x="114" y="41">Events</text>
+              <rect x="252" y="30" width="40" height="15" rx="2"/><text x="272" y="41">State</text>
+              <rect x="300" y="86" width="44" height="15" rx="2"/><text x="322" y="97">Data</text>
+              <rect x="212" y="136" width="60" height="15" rx="2"/><text x="242" y="147">Response</text>
+            </g>
+            <g class="dgm__box">
+              <rect x="16" y="46" width="68" height="34" rx="3"/><text x="50" y="60">Action</text><text x="50" y="73" class="dim">tap</text>
+              <rect x="128" y="46" width="72" height="34" rx="3"/><text x="164" y="60">UI</text><text x="164" y="73" class="dim">Compose</text>
+              <rect x="288" y="46" width="88" height="34" rx="3"/><text x="332" y="60">ViewModel</text><text x="332" y="73" class="dim">StateFlow</text>
+              <rect x="164" y="88" width="80" height="30" rx="3"/><text x="204" y="107">Repository</text>
+            </g>
+            <g class="dgm__box dgm__box--leaf">
+              <rect x="60" y="146" width="96" height="34" rx="3"/><text x="108" y="160">Local DB</text><text x="108" y="173" class="dim">Room</text>
+              <rect x="328" y="146" width="96" height="34" rx="3"/><text x="376" y="160">API Service</text><text x="376" y="173" class="dim">Retrofit</text>
+            </g>
+          </svg>
+        </div>
+        <div class="pane__status"><span>DIAGRAM</span><span class="pane__status-end">unidirectional</span></div>
+      </article>
+
+      <article class="pane pane--e">
+        <div class="pane__bar">
+          <span class="pane__name"><svg class="pane__ico" aria-hidden="true"><use href="#i-terminal"/></svg>build.sh</span>
+          <span class="pane__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        </div>
+        <div class="term">
+<pre><code><span class="pr">&gt;</span> ./gradlew :app:assembleRelease
+<span class="dim">&gt; Task :app:compileKotlin</span>
+<span class="dim">&gt; Task :app:mergeResources</span>
+<span class="dim">&gt; Task :app:packageRelease</span>
+<span class="dim">&gt; Task :app:bundleRelease</span>
+
+<span class="ok">BUILD SUCCESSFUL</span> in 1m 37s
+128 actionable tasks: 128 executed
+<span class="pr">developer@machine</span>:<span class="pt">~/[PROJECT_A]</span>$ <span class="caret" aria-hidden="true"></span></code></pre>
+        </div>
+        <div class="pane__status"><span>bash</span><span class="pane__status-end">exit 0</span></div>
+      </article>
+
+      <article class="pane pane--f">
+        <div class="pane__bar">
+          <span class="pane__name"><svg class="pane__ico tint-d" aria-hidden="true"><use href="#t-dart"/></svg>pubspec.yaml</span>
+          <span class="pane__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        </div>
+        <div class="code code--sm" tabindex="0" role="group" aria-label="Flutter dependency block sample">
+<pre class="code__src"><code><span class="p">dependencies</span>:
+  <span class="a">flutter</span>:
+    sdk: flutter
+  <span class="a">flutter_riverpod</span>: <span class="s">^2.5.1</span>
+  <span class="a">freezed_annotation</span>: <span class="s">^2.4.4</span>
+  <span class="a">dio</span>: <span class="s">^5.4.3</span>
+  <span class="a">drift</span>: <span class="s">^2.18.0</span>
+  <span class="a">go_router</span>: <span class="s">^14.1.0</span>
+
+<span class="p">dev_dependencies</span>:
+  <span class="a">build_runner</span>: <span class="s">^2.4.9</span>
+  <span class="a">freezed</span>: <span class="s">^2.5.2</span>
+  <span class="a">mocktail</span>: <span class="s">^1.0.4</span>
+  <span class="a">golden_toolkit</span>: <span class="s">^2.0.0</span></code></pre>
+        </div>
+        <div class="pane__status"><span>YAML</span><span class="pane__status-end">14:1</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══ TRIPTYCH: SKILLS / EXPERIENCE / GITHUB ═════════════════════════ -->
+  <div class="triptych">
+
+    <section class="tri" id="skills" aria-labelledby="skills-h">
+      <h2 class="mark" id="skills-h"><i aria-hidden="true">//</i>TECH STACK</h2>
+      <ul class="stack">
+        <li><span class="stack__ico tint-k"><svg><use href="#t-kotlin"/></svg></span>Kotlin</li>
+        <li><span class="stack__ico tint-c"><svg><use href="#t-compose"/></svg></span>Compose</li>
+        <li><span class="stack__ico"><svg><use href="#t-coroutines"/></svg></span>Coroutines</li>
+        <li><span class="stack__ico"><svg><use href="#t-flow"/></svg></span>Flow</li>
+        <li><span class="stack__ico tint-h"><svg><use href="#t-hilt"/></svg></span>Hilt</li>
+        <li><span class="stack__ico tint-r"><svg><use href="#t-room"/></svg></span>Room</li>
+        <li><span class="stack__ico tint-o"><svg><use href="#t-retrofit"/></svg></span>Retrofit</li>
+        <li><span class="stack__ico tint-f"><svg><use href="#t-flutter"/></svg></span>Flutter</li>
+        <li><span class="stack__ico tint-d"><svg><use href="#t-dart"/></svg></span>Dart</li>
+        <li><span class="stack__ico tint-b"><svg><use href="#t-riverpod"/></svg></span>Riverpod</li>
+        <li><span class="stack__ico tint-o"><svg><use href="#t-firebase"/></svg></span>Firebase</li>
+        <li><span class="stack__ico"><svg><use href="#t-cicd"/></svg></span>CI / CD</li>
+      </ul>
+      <p class="tri__foot"><svg class="tri__ico" aria-hidden="true"><use href="#t-git"/></svg>Also: KMP, Gradle&nbsp;convention&nbsp;plugins, Fastlane, Detekt, Turbine, Paparazzi.</p>
+    </section>
+
+    <section class="tri" id="experience" aria-labelledby="experience-h">
+      <h2 class="mark" id="experience-h"><i aria-hidden="true">//</i>EXPERIENCE</h2>
+      <ol class="tl">
+        <li>
+          <span class="tl__when">[2022] – Present</span>
+          <h3 class="tl__role">Senior Mobile App Developer</h3>
+          <p class="tl__where"><span class="warn">[COMPANY_A]</span> · [CITY]</p>
+          <ul class="tl__pts">
+            <li>Led the Compose rewrite of a [N]-screen finance app; cold start down [X]%.</li>
+            <li>Set the module boundaries and CI gates the whole team now builds against.</li>
+          </ul>
+        </li>
+        <li>
+          <span class="tl__when">[2020] – [2022]</span>
+          <h3 class="tl__role">Mobile App Developer</h3>
+          <p class="tl__where"><span class="warn">[COMPANY_B]</span> · [CITY]</p>
+          <ul class="tl__pts">
+            <li>Shipped a Flutter commerce app to both stores from one codebase.</li>
+            <li>Cut crash-free-session regressions with golden tests on every release branch.</li>
+          </ul>
+        </li>
+        <li>
+          <span class="tl__when">[2018] – [2020]</span>
+          <h3 class="tl__role">Android Developer</h3>
+          <p class="tl__where"><span class="warn">[COMPANY_C]</span> · [CITY]</p>
+          <ul class="tl__pts">
+            <li>Moved a legacy View stack onto MVVM and Coroutines without a feature freeze.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section class="tri" id="github" aria-labelledby="github-h">
+      <div class="tri__head">
+        <h2 class="mark" id="github-h"><i aria-hidden="true">//</i>GITHUB</h2>
+        <span class="samplechip">sample data</span>
+      </div>
+      <div class="gh">
+        <div class="gh__ring">
+          <svg viewBox="0 0 132 132" aria-hidden="true">
+            <circle class="gh__track" cx="66" cy="66" r="54"/>
+            <circle class="gh__arc" cx="66" cy="66" r="54"/>
+            <circle class="gh__track gh__track--in" cx="66" cy="66" r="42"/>
+            <circle class="gh__arc gh__arc--in" cx="66" cy="66" r="42"/>
+          </svg>
+          <svg class="gh__glyph" aria-hidden="true"><use href="#i-github"/></svg>
+        </div>
+        <dl class="gh__nums">
+          <dt>Commits</dt><dd>[1.2K]<span>+</span></dd>
+          <dt>Contributions, [YEAR]</dt><dd>[1.1K]<span>+</span></dd>
+          <dt>Public repos</dt><dd>[24]</dd>
+        </dl>
+      </div>
+      <div class="heat" id="heat" aria-hidden="true"></div>
+      <p class="heat__cap">
+        <span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span>
+      </p>
+      <a class="termbtn termbtn--wide" href="https://github.com/[YOUR_HANDLE]"><span class="termbtn__caret" aria-hidden="true">&gt;_</span>open_profile()<svg class="termbtn__ext" aria-hidden="true"><use href="#i-external"/></svg></a>
+    </section>
+  </div>
+
+  <!-- ══ NOTES ══════════════════════════════════════════════════════════ -->
+  <section class="band" id="notes" aria-labelledby="notes-h">
+    <div class="band__head">
+      <h2 class="mark" id="notes-h"><i aria-hidden="true">//</i>NOTES</h2>
+      <p class="band__note"><span class="sample">// titles are drafts; replace or link out to your blog</span></p>
+    </div>
+    <div class="grid grid--notes">
+      <article class="pane note">
+        <div class="pane__bar">
+          <span class="pane__name"><svg class="pane__ico" aria-hidden="true"><use href="#i-note"/></svg>state-holders.md</span>
+          <span class="note__date">[YYYY-MM]</span>
+        </div>
+        <div class="md md--tight">
+          <h3 class="md__h1">## The ViewModel is not your architecture</h3>
+          <p>Every screen ends up with one class that knows too much. Where the split actually belongs, and how to test the half that matters.</p>
+        </div>
+        <a class="note__go" href="[POST_URL_1]"><span class="termbtn__caret" aria-hidden="true">&gt;_</span>read()</a>
+      </article>
+      <article class="pane note">
+        <div class="pane__bar">
+          <span class="pane__name"><svg class="pane__ico" aria-hidden="true"><use href="#i-note"/></svg>two-stacks.md</span>
+          <span class="note__date">[YYYY-MM]</span>
+        </div>
+        <div class="md md--tight">
+          <h3 class="md__h1">## Keeping Kotlin and Dart honest</h3>
+          <p>Shared naming, shared state shapes, one review checklist. What actually transfers between a Compose and a Flutter codebase, and what does not.</p>
+        </div>
+        <a class="note__go" href="[POST_URL_2]"><span class="termbtn__caret" aria-hidden="true">&gt;_</span>read()</a>
+      </article>
+      <article class="pane note">
+        <div class="pane__bar">
+          <span class="pane__name"><svg class="pane__ico" aria-hidden="true"><use href="#i-note"/></svg>cold-start.md</span>
+          <span class="note__date">[YYYY-MM]</span>
+        </div>
+        <div class="md md--tight">
+          <h3 class="md__h1">## Cold start is a budget, not a bug</h3>
+          <p>Baseline profiles, lazy DI graphs, and the trace that finally explained where the first frame went.</p>
+        </div>
+        <a class="note__go" href="[POST_URL_3]"><span class="termbtn__caret" aria-hidden="true">&gt;_</span>read()</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ════════════════════════════════════════════════════════ -->
+  <section class="band band--last" id="contact" aria-labelledby="contact-h">
+    <div class="band__head">
+      <h2 class="mark" id="contact-h"><i aria-hidden="true">//</i>CONTACT</h2>
+    </div>
+    <div class="pane contact">
+      <div class="pane__bar">
+        <span class="pane__name"><svg class="pane__ico" aria-hidden="true"><use href="#i-terminal"/></svg>session · bash</span>
+        <span class="pane__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      </div>
+      <div class="contact__body">
+        <div class="term term--lg">
+<pre><code><span class="pr">developer@portfolio</span>:<span class="pt">~</span>$ whoami
+[YOUR_NAME] — Senior Mobile App Developer
+
+<span class="pr">developer@portfolio</span>:<span class="pt">~</span>$ cat contact.json
+{
+  <span class="a">"email"</span>:    <span class="s">"[YOU]@[DOMAIN]"</span>,
+  <span class="a">"github"</span>:   <span class="s">"github.com/[YOUR_HANDLE]"</span>,
+  <span class="a">"linkedin"</span>: <span class="s">"in/[YOUR_HANDLE]"</span>,
+  <span class="a">"based"</span>:    <span class="s">"[YOUR_CITY], [COUNTRY]"</span>,
+  <span class="a">"replies"</span>:  <span class="s">"within [N] working days"</span>
+}
+
+<span class="pr">developer@portfolio</span>:<span class="pt">~</span>$ <span class="caret" aria-hidden="true"></span></code></pre>
+        </div>
+        <div class="contact__side">
+          <p class="contact__lede">Hiring for a senior mobile role, or want a second opinion on an architecture call? Mail is fastest.</p>
+          <a class="termbtn termbtn--hot termbtn--wide" href="mailto:[YOU]@[DOMAIN]?subject=Senior%20mobile%20role"><span class="termbtn__caret" aria-hidden="true">&gt;_</span>send_mail()</a>
+          <button class="termbtn termbtn--wide" type="button" data-copy="[YOU]@[DOMAIN]">
+            <svg class="termbtn__ico" aria-hidden="true"><use href="#i-copy"/></svg><span class="js-copy-label">copy_email()</span>
+          </button>
+          <a class="termbtn termbtn--wide" href="assets/[YOUR_NAME]-resume.pdf" download><svg class="termbtn__ico" aria-hidden="true"><use href="#i-doc"/></svg>resume.pdf</a>
+          <ul class="contact__links">
+            <li><a href="https://github.com/[YOUR_HANDLE]"><svg aria-hidden="true"><use href="#i-github"/></svg>github.com/[YOUR_HANDLE]</a></li>
+            <li><a href="https://linkedin.com/in/[YOUR_HANDLE]"><svg aria-hidden="true"><use href="#i-linkedin"/></svg>linkedin.com/in/[YOUR_HANDLE]</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pane__status"><span class="hot">READY</span><span>bash</span><span class="pane__status-end">no server · mailto only</span></div>
+    </div>
+  </section>
+</main>
+
+<footer class="statusbar">
+  <p class="statusbar__prompt">
+    <span class="pr">developer@portfolio</span><span class="pt">:~$</span>
+    <span class="statusbar__typed" data-type="cat PLACEHOLDERS.md"></span><span class="caret" aria-hidden="true"></span>
+  </p>
+  <a class="statusbar__top" href="#top"><svg aria-hidden="true"><use href="#i-arrow-up"/></svg>TOP</a>
+  <p class="statusbar__meta">
+    <span class="statusbar__clock" id="clock">--:--:--</span>
+    <span class="statusbar__rule" aria-hidden="true"></span>
+    <span>© [YEAR] [YOUR_NAME]</span>
+    <span class="statusbar__sig" aria-hidden="true">&lt;/&gt;</span>
+  </p>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
