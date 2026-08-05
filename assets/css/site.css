@@ -94,6 +94,12 @@
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
+/* The top bar is fixed, so it sits over whatever an anchor jump lands on. Every
+   scroll target reserves exactly the bar's height and lets its own top padding
+   supply the air below — .band carries 26–44px, .tri 20–30px. Reserving more
+   here would open a gap that reads as a layout mistake. */
+.hero[id], .band[id], .tri[id] { scroll-margin-top: var(--bar); }
+
 body {
   min-height: 100vh;
   background:
@@ -105,7 +111,10 @@ body {
   font-feature-settings: "calt" 1;
   letter-spacing: -0.005em;
   padding: var(--bar) 0 0 0;
-  overflow-x: hidden;
+  /* No overflow-x here. html { overflow-x: clip } already clips the hero traces
+     and the mobile nav bleed, and `hidden` on body computes to `hidden auto`,
+     which makes body a second scroll container: scroll events then fire on body,
+     do not bubble, and never reach window. */
 }
 
 img, svg { display: block; max-width: 100%; }

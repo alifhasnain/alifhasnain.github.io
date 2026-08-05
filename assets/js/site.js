@@ -50,7 +50,13 @@
     window.setInterval(tick, 1000);
   }
 
-  /* ── 4. active-section tracking for nav + rail ─────────────────────── */
+  /* ── 4. active-section tracking for nav + rail ───────────────────────
+     Elects by scan line, not by intersection ratio. #skills, #experience and
+     #opensource are three columns of ONE .triptych grid row: they enter and
+     leave the viewport together, so a ratio comparison always returns the same
+     member and the other two can never light up. Sections that share a vertical
+     range are therefore grouped, and a click pins which member of its group is
+     shown — scroll past the row and it falls back to the group's first column. */
   function scrollspy() {
     var map = [
       { id: "terminal", rail: "top" },
@@ -63,37 +69,125 @@
       { id: "contact", rail: "contact", nav: "#contact" }
     ];
 
-    var watched = map.filter(function (m) { return document.getElementById(m.id); });
-    if (!watched.length || !("IntersectionObserver" in window)) return;
+    var watched = map.filter(function (m) {
+      m.el = document.getElementById(m.id);
+      return !!m.el;
+    });
+    if (!watched.length) return;
 
-    var ratios = new Map();
+    var groups = [];
+    var pinned = null;   /* the group member a click asked for */
+    var lock = 0;        /* held while a click-driven scroll is still travelling */
+    var lockTimer, raf = 0;
+
+    function bar() {
+      var v = parseFloat(getComputedStyle(root).getPropertyValue("--bar"));
+      return isNaN(v) ? 52 : v;
+    }
+
+    /* Measured every frame rather than cached: opening a <details> row in the
+       projects explorer changes section offsets, and a stale cache would elect
+       the wrong section with no visible cause. Eight rects is nothing.
+       Kept viewport-relative, never scrollY-relative, so it holds whichever
+       element turns out to be the scroll container. */
+    function measure() {
+      watched.forEach(function (m) {
+        var r = m.el.getBoundingClientRect();
+        m.top = r.top;
+        m.bottom = r.bottom;
+      });
+
+      groups = [];
+      watched.forEach(function (m) {
+        var g = groups[groups.length - 1];
+        if (g) {
+          var last = g.members[g.members.length - 1];
+          var overlap = Math.min(m.bottom, last.bottom) - Math.max(m.top, last.top);
+          var shorter = Math.min(m.bottom - m.top, last.bottom - last.top);
+          /* Side by side, not stacked: more than 60% of the shorter box shares
+             the taller one's vertical range. Collapse the triptych to one
+             column on a phone and this stops matching on its own. */
+          if (shorter > 0 && overlap > shorter * 0.6) {
+            g.members.push(m);
+            g.top = Math.min(g.top, m.top);
+            g.bottom = Math.max(g.bottom, m.bottom);
+            return;
+          }
+        }
+        groups.push({ top: m.top, bottom: m.bottom, members: [m] });
+      });
+    }
+
+    function pick() {
+      if (!groups.length) return null;
+      /* The scan line sits just under the fixed bar — the first row of content a
+         reader can actually see. Whatever group owns that line is the section
+         they are in. */
+      var line = bar() + 1;
+
+      var g = groups[0];
+      for (var i = 0; i < groups.length; i++) {
+        if (groups[i].top <= line) g = groups[i]; else break;
+      }
+
+      if (pinned) {
+        if (g.members.indexOf(pinned) !== -1) { lock = 0; return pinned; }
+        if (lock) return pinned;
+        pinned = null;
+      }
+      return g.members[0];
+    }
 
     function paint() {
-      var best = null, bestRatio = 0;
-      ratios.forEach(function (r, id) {
-        if (r > bestRatio) { bestRatio = r; best = id; }
-      });
-      if (!best) return;
-      var entry = watched.find(function (m) { return m.id === best; });
-      if (!entry) return;
+      var m = pick();
+      if (!m) return;
 
       document.querySelectorAll(".rail a.is-active").forEach(function (a) { a.classList.remove("is-active"); });
-      var railLink = document.querySelector('.rail a[data-rail="' + entry.rail + '"]');
+      var railLink = document.querySelector('.rail a[data-rail="' + m.rail + '"]');
       if (railLink) railLink.classList.add("is-active");
 
       document.querySelectorAll(".nav a.is-active").forEach(function (a) { a.classList.remove("is-active"); });
-      if (entry.nav) {
-        var navLink = document.querySelector('.nav a[href="' + entry.nav + '"]');
+      if (m.nav) {
+        var navLink = document.querySelector('.nav a[href="' + m.nav + '"]');
         if (navLink) navLink.classList.add("is-active");
       }
     }
 
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { ratios.set(e.target.id, e.isIntersecting ? e.intersectionRatio : 0); });
-      paint();
-    }, { rootMargin: "-56px 0px -45% 0px", threshold: [0, 0.15, 0.35, 0.6, 0.9] });
+    function onScroll() {
+      if (raf) return;
+      raf = window.requestAnimationFrame(function () {
+        raf = 0;
+        measure();
+        paint();
+      });
+    }
 
-    watched.forEach(function (m) { io.observe(document.getElementById(m.id)); });
+    document.querySelectorAll('.nav a[href^="#"], .rail a[href^="#"]').forEach(function (a) {
+      a.addEventListener("click", function () {
+        var href = a.getAttribute("href");
+        var rail = a.getAttribute("data-rail");
+        var m = watched.find(function (w) {
+          return (w.nav && w.nav === href) || (rail && w.rail === rail);
+        });
+        if (!m) return;
+        pinned = m;
+        lock = 1;
+        /* The lock must not outlive the journey: click a target, then scroll
+           away by hand before arriving, and without this the highlight freezes. */
+        window.clearTimeout(lockTimer);
+        lockTimer = window.setTimeout(function () { lock = 0; onScroll(); }, 1500);
+        measure();
+        paint();
+      });
+    });
+
+    /* Capture phase, not bubble: scroll events do not bubble, so if anything on
+       the page ever becomes a nested scroll container again, a bubble-phase
+       listener on window goes silent without erroring. Capture reaches window
+       for any target. */
+    window.addEventListener("scroll", onScroll, { passive: true, capture: true });
+    window.addEventListener("resize", onScroll);
+    onScroll();
   }
 
   /* ── 5. one settle on entry for content below the fold ─────────────── */
