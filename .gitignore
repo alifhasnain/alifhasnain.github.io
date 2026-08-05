@@ -30,6 +30,10 @@ DATA-NEEDED.md
 # The pinned design reference. 1.5 MB and not needed to serve the site.
 inspiration.png
 
+# Portrait source. assets/img/portrait.webp is the cropped, served copy; the
+# full-resolution original is a working file and stays local.
+my_photo.jpg
+
 # Temp preview scaffolds
 _*.html
 

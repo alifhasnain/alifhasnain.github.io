@@ -61,7 +61,7 @@ embed or delete the `#heat` element and its caption.
 | Path | What |
 |---|---|
 | `assets/[YOUR_NAME]-resume.pdf` | Your résumé. Three links point at it — rename the file *and* the three `href`s together. |
-| `assets/img/portrait-placeholder.svg` | Replace with a real photo (`.webp` or `.jpg`, roughly 620×720, portrait crop). Update the `<img src>`, `alt`, `width`, `height`. The pane is greyscaled by CSS (`.portrait__frame img`) — remove that filter if you want colour. |
+| ~~`assets/img/portrait-placeholder.svg`~~ | **Done** — `assets/img/portrait.webp` is a real photo at 620×720. The pane is greyscaled by CSS (`.portrait__frame img`); the source is already monochrome, so that filter only adds the contrast/brightness trim. The `alt` still carries `[YOUR_NAME]`. |
 | `assets/img/og.png` | Social share image, 1200×630. Referenced by `og:image`. |
 
 ## 5. Sample content — authored, replace when you can

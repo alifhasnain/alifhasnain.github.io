@@ -60,7 +60,8 @@ assets/css/site.css         tokens, layout, the boot sequence, responsive rules
 assets/js/site.js           progressive enhancement only (see below)
 assets/fonts/*.woff2        Martian Mono (display) + JetBrains Mono (code/UI)
 assets/img/favicon.svg      authored mark
-assets/img/portrait-placeholder.svg   replace with a real photo
+assets/img/portrait.webp    the hero photo, 620×720, greyscaled by CSS
+assets/img/portrait-placeholder.svg   unused fallback, kept for reference
 
 PRODUCT.md                  durable product truth — who this is for, what is real
 DESIGN.md                   the visual system, recorded from the built page

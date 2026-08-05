@@ -817,7 +817,13 @@ html[data-boot="run"] .sysinfo { animation-delay: .3s; }
   .hero__mid { grid-column: 1; grid-row: auto; order: 1; }
   .portrait { grid-column: 1; grid-row: auto; order: 2; max-width: 100%; }
   .sysinfo { grid-column: 1; grid-row: auto; order: 3; }
-  .portrait__frame img { max-height: 232px; object-fit: cover; object-position: 50% 16%; }
+  /* The band keeps a 3:2 aspect rather than a fixed height: the photo is a
+     full head-and-shoulders frame, and a fixed 232px crops the chin off as the
+     viewport widens toward 720px. 6% lifts the head off the top edge. */
+  .portrait__frame img {
+    aspect-ratio: 3 / 2; max-height: 420px;
+    object-fit: cover; object-position: 50% 6%;
+  }
   .hero__cta .termbtn { flex: 1 1 auto; justify-content: center; }
   .triptych { grid-template-columns: minmax(0, 1fr); }
   .tri + .tri { border-left: 0; border-top: 1px solid var(--rule); }

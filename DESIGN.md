@@ -355,7 +355,8 @@ vertical rules with no gap and no card — the rule is the divider.
 - **≤1080px** — the mosaic goes two-up.
 - **≤780px** — the mosaic goes single column; the contact pane stacks.
 - **≤720px** — the headline moves to the top of the hero and the portrait becomes a
-  232px band beneath the primary actions; the status bar becomes static at the document
+  3:2 band (capped at 420px) beneath the primary actions, cropped to `50% 6%` so the
+  whole head survives at every width; the status bar becomes static at the document
   end; the tech grid drops to three columns.
 
 ### Named Rules
