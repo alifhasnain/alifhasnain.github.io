@@ -6,6 +6,11 @@
 # location, email, employers, and dates in one tidy file. It stays local.
 DATA-NEEDED.md
 
+# cv-markdown.md is a résumé export. It holds a home street address, a personal
+# mobile number, and a personal email. Never let it into a public commit.
+cv-markdown.md
+cv-*.md
+
 # Uncomment if you'd rather not publish the product/strategy notes either.
 # They currently contain no personal data, so publishing them is safe.
 # PRODUCT.md
@@ -47,3 +52,4 @@ node_modules/
 .idea/
 *.swp
 *~
+projects/

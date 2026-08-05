@@ -50,39 +50,7 @@
     window.setInterval(tick, 1000);
   }
 
-  /* ── 4. contribution grid — deterministic sample data ──────────────────
-     Seeded so the graphic is identical on every load and screenshot. This is
-     placeholder texture, marked "sample data" in the markup, and it is
-     aria-hidden: it never claims a real contribution history.             */
-  function heatmap() {
-    var host = document.getElementById("heat");
-    if (!host) return;
-
-    var seed = 0x5f3a91;
-    var rand = function () {                    /* mulberry32 */
-      seed |= 0; seed = (seed + 0x6d2b79f5) | 0;
-      var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
-      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-    };
-
-    var frag = document.createDocumentFragment();
-    for (var w = 0; w < 52; w++) {
-      /* mild seasonal swell so the field reads like activity, not noise */
-      var season = 0.55 + 0.45 * Math.sin((w / 52) * Math.PI * 2 - 1.1);
-      for (var d = 0; d < 7; d++) {
-        var weekend = d === 0 || d === 6 ? 0.45 : 1;
-        var v = rand() * season * weekend;
-        var cell = document.createElement("i");
-        var level = v > 0.62 ? 3 : v > 0.42 ? 2 : v > 0.2 ? 1 : 0;
-        if (level) cell.setAttribute("data-l", String(level));
-        frag.appendChild(cell);
-      }
-    }
-    host.appendChild(frag);
-  }
-
-  /* ── 5. active-section tracking for nav + rail ─────────────────────── */
+  /* ── 4. active-section tracking for nav + rail ─────────────────────── */
   function scrollspy() {
     var map = [
       { id: "terminal", rail: "top" },
@@ -90,8 +58,8 @@
       { id: "projects", rail: "projects", nav: "#projects" },
       { id: "skills", rail: "skills", nav: "#skills" },
       { id: "experience", rail: "experience", nav: "#experience" },
-      { id: "github", rail: "github" },
-      { id: "notes", rail: "notes", nav: "#notes" },
+      { id: "opensource", rail: "opensource", nav: "#opensource" },
+      { id: "credentials", rail: "credentials", nav: "#credentials" },
       { id: "contact", rail: "contact", nav: "#contact" }
     ];
 
@@ -128,7 +96,7 @@
     watched.forEach(function (m) { io.observe(document.getElementById(m.id)); });
   }
 
-  /* ── 6. one settle on entry for content below the fold ─────────────── */
+  /* ── 5. one settle on entry for content below the fold ─────────────── */
   function reveals() {
     if (reduced.matches || !("IntersectionObserver" in window)) return;
 
@@ -154,7 +122,7 @@
     });
   }
 
-  /* ── 7. copy-to-clipboard, with a real failure path ────────────────── */
+  /* ── 6. copy-to-clipboard, with a real failure path ────────────────── */
   function copyEmail() {
     var btn = document.querySelector("[data-copy]");
     if (!btn) return;
@@ -202,7 +170,6 @@
   /* ── init ──────────────────────────────────────────────────────────── */
   boot();
   clock();
-  heatmap();
   scrollspy();
   reveals();
   copyEmail();

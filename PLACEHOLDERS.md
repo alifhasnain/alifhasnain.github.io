@@ -19,49 +19,76 @@ appear the most times.
 
 ---
 
-## 1. Identity — replace everywhere
+## 1. Identity — **done**
 
-| Token | What it is | Where it shows |
-|---|---|---|
-| `[YOUR_NAME]` | Your full name | `<title>`, OG tags, README pane, contact session, footer, résumé filename |
-| `[YOUR_HANDLE]` | GitHub / LinkedIn username | top bar, GitHub panel, contact links |
-| `[YOU]@[DOMAIN]` | Your email address | top bar, contact session, `send_mail()`, `copy_email()` |
-| `[YOUR_CITY]`, `[COUNTRY]` | Where you are based | SYSTEM.INFO, README pane, contact session |
-| `[YEAR]` | Copyright year | footer |
+Filled from `cv-markdown.md` (which is now gitignored — see §7). No identity
+tokens remain.
 
-## 2. Experience — `#experience`
-
-| Token | What it is |
+| Value | Where it shows |
 |---|---|
-| `[COMPANY_A]` `[COMPANY_B]` `[COMPANY_C]` | Real employers, most recent first |
-| `[CITY]` | Office/remote location per role |
-| `[2022]` `[2020]` `[2018]` | Start and end years |
-| `[N]-screen`, `[X]%` | Only if you can cite the real number. Otherwise rewrite the bullet without one. |
+| Mohammad Alif Hasnain | `<title>`, OG tags, README pane, `whoami`, footer, portrait `alt` |
+| `hasnain.alif20@gmail.com` | top bar, contact session, `send_mail()`, `copy_email()` |
+| `+88 01684 336113` | contact session + a `tel:` link in the contact list |
+| Dhaka, Bangladesh | SYSTEM.INFO `BASED`, README pane, contact session |
+| `github.com/alifhasnain` | top bar, `view_all_repos()`, contact list, contact session |
+| `linkedin.com/in/alif-hasnain-850002153` | top bar, contact list, contact session |
+| 2026 | footer copyright — bump each January, or automate it in `site.js` |
 
-Job titles (`Senior Mobile App Developer`, `Mobile App Developer`,
-`Android Developer`) and the achievement bullets are drafts written to the right
-shape — rewrite them in your own words.
+Two open choices:
+
+- **Name form.** The page uses **Mohammad Alif Hasnain**, the form your own CV
+  header uses. Your git config and both handles say *Alif Hasnain*. If you prefer
+  the short form it is one find/replace.
+- **Résumé filename.** Three links now point at `assets/alif-hasnain-resume.pdf`.
+  That file does not exist yet — create it under exactly that name or rename the
+  three `href`s together.
+- **Stack Overflow** — **done.** `stackoverflow.com/users/8521094/alif-hasnain`, in
+  both `contact.json` and the contact link list, with a new authored `#i-stack`
+  icon. The `contact.json` keys were re-aligned to the longer `"stackoverflow":`.
+
+## 2. Experience — **done**, bullets are thin
+
+Two real roles, no tokens:
+
+| Role | Where | When |
+|---|---|---|
+| Senior Mobile App Developer | SSL Wireless · Dhaka | Jun 2023 – Present |
+| Software Engineer (Mobile) | IOTA Infotech Limited · Dhaka | Feb 2021 – Jun 2023 |
+
+Mediapark was dropped at your instruction. The `warn` (amber) styling came off the
+employer names — amber means *unverified* in this system, and these are now real.
+
+⚠ **The bullets carry no metrics, on purpose.** The old ones (`[N]-screen finance
+app`, `cold start down [X]%`) were invented, and invented bullets attached to a
+*named* employer stop being placeholders and become false claims. What is there
+now comes only from sourced material: the SSL Wireless lines from the two
+architectures you introduced (the same ones the projects band documents), the IOTA
+lines from your CV's own wording.
+
+- [ ] **Give each role one outcome you can defend** — a number, a scale, a
+      before/after. That is the single highest-value edit left on the page.
 
 ## 3. Numbers and metrics
 
 | Token | Where | Note |
 |---|---|---|
-| `[9]` `[7]` `[3]` | SYSTEM.INFO language share | Count of shipped apps per language. The bar widths are set by `style="--fill:N"` on each `.meter` — adjust to match. |
-| `[N] shipped apps` | SYSTEM.INFO caption | |
-| `[1.2K]` `[1.1K]` `[24]` | GitHub panel | Marked `sample data` on the page. Replace or delete the panel. |
+| ~~`[9]` `[7]` `[3]`~~ | SYSTEM.INFO | **Done** — four real rows: Kotlin 9, Dart 8, Java 8, Swift 7. Bar widths are `style="--fill:N"`, set to 14/12/12/11 (≈1.55 blocks per app; the 134px track holds 16). Change a count and change its `--fill` with it. |
+| ~~`[N] shipped apps`~~ | SYSTEM.INFO | **Done** — `35+ apps`. The four language counts sum to 32, so 35+ leaves room for the rest; keep those consistent if you edit either. |
 | `[N] working days` | contact session | Your real reply time |
-| `[N] years` | README pane | |
+| ~~`[N] years`~~ | README pane | **Done** — reads `5+ years`, computed from Feb 2021 (IOTA start) to now. Bump the phrasing if you count differently. |
+| `[CLAUDE_CODE_101_URL]` | `#credentials` → Certifications | Verification URL for the Claude Code 101 certificate. The other two rows link to real proofs (Coursera verify page, Google Drive PDF). Until this is real the row still opens a new tab — to a dead address. |
 
-The contribution grid is **generated, seeded sample texture**
-(`heatmap()` in `assets/js/site.js`) and is `aria-hidden`. Replace it with a real
-embed or delete the `#heat` element and its caption.
+The GitHub statistics panel and its seeded contribution grid are **gone**, along
+with `heatmap()` in `assets/js/site.js` and the `.gh*` / `.heat*` CSS. The
+`#opensource` column replaced them and carries no placeholders — every value in
+it (`MIT`, `0.1.0`, `Android`, `dio`) is read from the `falconer` repo.
 
 ## 4. Files you must add
 
 | Path | What |
 |---|---|
-| `assets/[YOUR_NAME]-resume.pdf` | Your résumé. Three links point at it — rename the file *and* the three `href`s together. |
-| ~~`assets/img/portrait-placeholder.svg`~~ | **Done** — `assets/img/portrait.webp` is a real photo at 620×720. The pane is greyscaled by CSS (`.portrait__frame img`); the source is already monochrome, so that filter only adds the contrast/brightness trim. The `alt` still carries `[YOUR_NAME]`. |
+| `assets/alif-hasnain-resume.pdf` | ⚠ **Missing.** Three links point at this exact name — top bar (visible at every scroll depth), `download_cv()`, and the contact pane. Until the file exists, your second CTA 404s. |
+| ~~`assets/img/portrait-placeholder.svg`~~ | **Done** — `assets/img/portrait.webp` is a real photo at 620×720. The pane is greyscaled by CSS (`.portrait__frame img`); the source is already monochrome, so that filter only adds the contrast/brightness trim. |
 | `assets/img/og.png` | Social share image, 1200×630. Referenced by `og:image`. |
 
 ## 5. Sample content — authored, replace when you can
@@ -69,34 +96,69 @@ embed or delete the `#heat` element and its caption.
 These are written at full quality so the layout is real, and are marked
 `// sample` on the page. They are demonstrations, not claims:
 
-- **Projects band** — `TransactionList.kt`, `transaction_list.dart`,
-  `pubspec.yaml`, `build.sh`, and the two architecture diagrams. Swap in code
-  from your own repos. Keep the line-number gutter in sync: the `.code__gut`
-  block lists one number per line.
-- **Notes band** — three post titles and blurbs, dated `[YYYY-MM]`. The three
-  `read()` links point at `[POST_URL_1]` … `[POST_URL_3]`; give them real URLs or
-  delete the section (also remove `[05] notes` from the top nav and the rail).
-- **`[PROJECT_A]`** — the repo name in the `build.sh` terminal prompt.
+- **Projects band** — now real content, not samples. Two architecture diagrams
+  (`android_mvvm.dio`, `riverpod_flow.dio`), the `~/projects` explorer holding 20
+  projects across three platform groups, and four deep-dive panes
+  (`migration.md`, `bangla-qr.md`, `sslcommerz-sdk.md`, `cashbaba-sdk.md`).
+  Sourced from `projects/**` — which is **not** gitignored, and whose summaries
+  contain bundle ids, internal class names, endpoint paths, distribution URLs and
+  a crypto wire format. None of that reached the page; see §7.
+- ~~**Four code panes**~~ — **removed** at the owner's request:
+  `TransactionScreen.kt`, `txn_controller.dart`, `build.sh`, `pubspec.yaml`, and
+  with them `[PROJECT_A]`. ⚠ The page now renders **no code at all**, which
+  leaves `.code*` (site.css ~503–527, including the whole `.k .f .t .s .n .an .p
+  .a .c` syntax palette) unused. The rules were kept, not deleted: DESIGN.md
+  documents the Editor Pane as this system's *signature component*, and deleting
+  its implementation as a side effect of a content edit would put the design
+  system out of sync with the code. Reinstate a code pane and it works as-is.
+- ~~**Notes band**~~ — **deleted.** Three invented titles pointing at
+  `[POST_URL_1..3]` were three dead links. The `.note*` CSS and the
+  `grid--notes` / `md--tight` rules went with them.
 - **`platform_choice.md` pane** — this is the one section a competitor cannot
   copy from you. Read it, then make it genuinely yours.
 
 ## 6. Remove the draft marker when done
 
 - `.draftchip` in the top bar (`● draft`)
-- `.samplechip` in the GitHub panel (`sample data`)
+- `.samplechip` — no longer used in the markup; the CSS rule is kept because
+  DESIGN.md documents it as a chip variant. Reach for it if you ever ship a
+  number that is real but not yet verifiable.
 - every `<span class="sample">// …</span>` note
 - the typed footer command `data-type="cat PLACEHOLDERS.md"` → change to
   whatever you like
 
+## 7. Personal data — keep it out of the repo
+
+This repo is public. `.gitignore` holds two files back for that reason:
+
+- `DATA-NEEDED.md` — the content worksheet.
+- `cv-markdown.md` (and `cv-*.md`) — the résumé export. It contains a **home
+  street address**, a personal mobile number, and a personal email. It was
+  untracked but *unignored*, so a single `git add .` would have published the home
+  address permanently. Ignored now.
+
+⚠ **`projects/` is NOT ignored.** Its 22 summaries are the richest disclosure risk
+in the repo: bundle ids (`com.sslwireless.*`, `com.sbac`), internal class names,
+`/api/v1` endpoint paths, Maven coordinates, distribution and internal hostnames,
+and the exact AES wire format used to encrypt PINs before transport at a PCI-DSS
+gateway. None of it reached `index.html` — verified by grep — but committing the
+directory publishes all of it. Decide deliberately: ignore it, or move it out of
+the repo.
+
+The street address was deliberately **not** put on the site: no employer needs it
+before an offer, and a permanently-indexed home address serves no hiring purpose.
+The phone number *is* published, by explicit choice.
+
 ## Check before you publish
 
 ```
-grep -n "\[" index.html          # no bracket tokens should remain
+grep -n "\[" index.html          # only the exceptions below should remain
 ```
 
-Two kinds of brackets survive that check on purpose — they are design, not
-tokens: the nav indices `[01]`–`[06]`, and Kotlin/Dart array syntax inside the
-code samples (`items[i]`).
+Four kinds of brackets survive on purpose — design, not tokens: the nav indices
+`[01]`–`[06]`, Kotlin/Dart array syntax in the samples (`items[i]`), and the two
+honest unknowns `[N] apps` / `within [N] working days`. `[PROJECT_A]` is the last
+real token.
 
-Then confirm: no invented employer, no metric you cannot source, no `resume.pdf`
-link pointing at a file that does not exist.
+Then confirm: no invented employer, no metric you cannot source, and that
+`assets/alif-hasnain-resume.pdf` actually exists.
