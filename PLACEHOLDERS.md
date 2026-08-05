@@ -100,6 +100,34 @@ These are written at full quality so the layout is real, and are marked
   (`android_mvvm.dio`, `riverpod_flow.dio`), the `~/projects` explorer holding 20
   projects across three platform groups, and four deep-dive panes
   (`migration.md`, `bangla-qr.md`, `sslcommerz-sdk.md`, `cashbaba-sdk.md`).
+  Each explorer row is a native `<details>` — it opens with JavaScript off, by
+  keyboard, and by touch. Inside: a detail paragraph, stack tags, variant chips
+  where a family exists, and a store link where the app is actually listed.
+  **Fourteen listings are linked. Twelve return 200; two do not — see below:**
+  - **Eight whole-row `play_store()` controls** — easy-merchant (flutter),
+    sslcommerz-merchant, emi-locker, rmg-erp, silknet, banglapay, nrb-click,
+    luxxle. To add another, drop an `<a class="tree__store" …>` into that row's
+    `.tree__panel`.
+  - **Six linked variant chips** — inside a family row a listed sibling becomes
+    the link itself, because the chip already names the app. Janata QR Merchant,
+    Rupali Merchant and SEBL Merchant in `bangla-qr-merchant`; all three of
+    Bhalobashar Gulshan, Quick Response and Quick Response Dhanmondi in
+    `bhalobashar-gulshan`. Markup is
+    `<li class="has-store"><a …>Name<svg class="tree__kid-ico">…</svg></a></li>`
+    with an `aria-label` naming the store and the new tab, since the play glyph is
+    `aria-hidden`. A plain `<li>` stays a plain chip; both render at the same
+    height so the family still reads as one set.
+- ⚠ **Two linked chips point at listings that are not live yet.** Rupali Merchant
+  (`com.sslwireless.rupalimerchant`) and SEBL Merchant (`com.sslwireless.seblmerchant`)
+  both return HTTP 404 from Google Play — retried with `gl=BD&hl=en` and a desktop
+  user agent. Linked anyway, on the owner's explicit instruction: the listings are
+  pending publication and the URLs will resolve once they go live. **Re-check both
+  before treating the page as publish-ready** — until they publish, two chips in the
+  five-bank family open a Google Play error page.
+- ⚠ **Partner App stays unlinked.** `com.sslwireless.partner_app` also 404s, and it
+  is the likeliest permanent case: an enterprise app distributed through Managed
+  Google Play has no public listing and never will. Star Cineplex has no package ID
+  yet. See DATA-NEEDED.md.
   Sourced from `projects/**` — which is **not** gitignored, and whose summaries
   contain bundle ids, internal class names, endpoint paths, distribution URLs and
   a crypto wire format. None of that reached the page; see §7.

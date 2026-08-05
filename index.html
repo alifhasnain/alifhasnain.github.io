@@ -59,6 +59,8 @@
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.8 4.4 4.4L19 7.6"/></symbol>
     <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9.2" r="5.6"/><path d="m8.5 13.9-1.3 6.5 4.8-2.6 4.8 2.6-1.3-6.5"/></symbol>
     <symbol id="i-seal" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.8"/><circle cx="12" cy="12" r="6.4"/><path d="m9.5 12.1 1.8 1.8 3.2-3.6"/><path d="M12 3.2V1.8"/><path d="M12 22.2v-1.4"/><path d="M3.2 12H1.8"/><path d="M22.2 12h-1.4"/></symbol>
+    <symbol id="i-caret" viewBox="0 0 24 24"><path d="m9.6 6.4 6 5.6-6 5.6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M6.2 3.6 19.4 12 6.2 20.4z"/></symbol>
     <symbol id="i-stack" viewBox="0 0 24 24"><path d="M17.4 14.8v4.6H6.6v-4.6"/><path d="M8.8 16.2h6.4"/><path d="m9.2 12.9 6.3 1.1"/><path d="m10.1 9.5 5.9 2.2"/><path d="m11.8 6.4 5 3.3"/></symbol>
 
     <symbol id="t-kotlin" viewBox="0 0 24 24"><path d="M3 3h18l-9 9 9 9H3z" fill="currentColor" stroke="none"/></symbol>
@@ -337,33 +339,127 @@
             <h3 class="tree__cap"><svg class="tree__ico tint-f" aria-hidden="true"><use href="#t-flutter"/></svg>flutter/<span class="tree__count">9</span></h3>
             <ul class="tree__list">
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">bangla-qr-merchant</span><span class="tree__desc">Bank QR acceptance &mdash; five bank apps on one core</span></span>
-              <ul class="tree__kids"><li>Janata QR Merchant</li><li>Rupali Merchant</li><li>SEBL Merchant</li><li>SDBL Merchant</li><li>NCC Merchant</li></ul>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">bangla-qr-merchant</span>
+                  <span class="tree__desc">Bank QR acceptance &mdash; five bank apps on one core</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">Turns a merchant&rsquo;s phone into a payment terminal: enter an amount, issue an interoperable Bangla QR for the customer to scan, or drive a card and wallet checkout through the gateway. Settlement status and daily summaries land in a live dashboard with full transaction history. Bilingual throughout, with PINs encrypted on the device before transport and tokens held in the platform keystore.</p>
+                  <ul class="tree__tags"><li>Flutter</li><li>Riverpod</li><li>Freezed</li><li>Dio</li><li>Injectable</li><li>secure storage</li></ul>
+                  <ul class="tree__kids"><li class="has-store"><a href="https://play.google.com/store/apps/details?id=com.sslwireless.jblmerchant" target="_blank" rel="noopener noreferrer" aria-label="Janata QR Merchant on Google Play (opens in a new tab)">Janata QR Merchant<svg class="tree__kid-ico" aria-hidden="true"><use href="#i-play"/></svg></a></li><li class="has-store"><a href="https://play.google.com/store/apps/details?id=com.sslwireless.rupalimerchant" target="_blank" rel="noopener noreferrer" aria-label="Rupali Merchant on Google Play (opens in a new tab)">Rupali Merchant<svg class="tree__kid-ico" aria-hidden="true"><use href="#i-play"/></svg></a></li><li class="has-store"><a href="https://play.google.com/store/apps/details?id=com.sslwireless.seblmerchant" target="_blank" rel="noopener noreferrer" aria-label="SEBL Merchant on Google Play (opens in a new tab)">SEBL Merchant<svg class="tree__kid-ico" aria-hidden="true"><use href="#i-play"/></svg></a></li><li>SDBL Merchant</li><li>NCC Merchant</li></ul>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">easy-merchant</span><span class="tree__desc">Merchant super-app &middot; migrated from native Android</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">easy-merchant</span>
+                  <span class="tree__desc">Merchant super-app &middot; migrated from native Android</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">A merchant super-app rather than a payment terminal: QR acceptance and settlement sit beside a digital ledger for daily receivables and payables, utility and airtime recharge funded from the settlement balance, inventory and order management, KYC onboarding with face liveness, card issuance and referrals. This is the Flutter build; the native original is listed under <code>native/</code>.</p>
+                  <ul class="tree__tags"><li>Flutter</li><li>Riverpod</li><li>Freezed</li><li>Dio</li><li>get_it</li><li>Injectable</li></ul>
+                  <a class="tree__store" href="https://play.google.com/store/apps/details?id=com.sslwireless.easymerchants" target="_blank" rel="noopener noreferrer"><svg class="tree__store-ico" aria-hidden="true"><use href="#i-play"/></svg>play_store()<svg class="tree__store-ext" aria-hidden="true"><use href="#i-external"/></svg></a>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">star-cineplex</span><span class="tree__desc">Cinema ticketing &middot; live seat map, stored-value wallet</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">star-cineplex</span>
+                  <span class="tree__desc">Cinema ticketing &middot; live seat map, stored-value wallet</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">The whole browse&ndash;book&ndash;pay&ndash;enter journey in one app: film and showtime discovery across locations, a live seat map with time-boxed holds, concessions, and checkout through the payment gateway. Adds a stored-value cinema wallet with top-up and peer transfer, plus QR entry tickets. Resilient networking detects loss of connectivity and replays requests.</p>
+                  <ul class="tree__tags"><li>Flutter</li><li>Riverpod</li><li>Dio</li><li>ScreenUtil</li><li>Lottie</li></ul>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">sslcommerz-merchant</span><span class="tree__desc">Gateway control centre &middot; disputes, links, invoices</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">sslcommerz-merchant</span>
+                  <span class="tree__desc">Gateway control centre &middot; disputes, links, invoices</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">The mobile control centre for merchants on the gateway: transaction monitoring, store and staff management, dispute handling, payment links and invoices, and a co-branded prepaid card &mdash; consolidating work that used to live across web dashboards and support calls. Biometric sign-in, encrypted local storage, real-time push. Around 747 Dart files across 33+ feature modules.</p>
+                  <ul class="tree__tags"><li>Flutter</li><li>Riverpod</li><li>Firebase</li><li>biometrics</li><li>pagination</li></ul>
+                  <a class="tree__store" href="https://play.google.com/store/apps/details?id=com.sslwireless.sslcommerzmerchant" target="_blank" rel="noopener noreferrer"><svg class="tree__store-ico" aria-hidden="true"><use href="#i-play"/></svg>play_store()<svg class="tree__store-ext" aria-hidden="true"><use href="#i-external"/></svg></a>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">cgl-app</span><span class="tree__desc">Garment factory floor &middot; offline-first, role-aware</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">cgl-app</span>
+                  <span class="tree__desc">Garment factory floor &middot; offline-first, role-aware</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">Digitises a garment factory&rsquo;s shop floor and pre-production paperwork for a role hierarchy of operators, supervisors, department heads and admins &mdash; hourly production, defect logs, quality checklists, absenteeism, garment movement, with charts and drill-downs for management. Offline-first because coverage inside factory buildings is unreliable: encrypted local cache, work continues offline, queued submissions sync on reconnect. ~25 feature modules, ~40 screens.</p>
+                  <ul class="tree__tags"><li>Flutter</li><li>Riverpod</li><li>Dio</li><li>Hive</li><li>offline-first</li></ul>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">emi-locker</span><span class="tree__desc">Installment repayment &middot; schedules and settlement</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">emi-locker</span>
+                  <span class="tree__desc">Installment repayment &middot; schedules and settlement</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">Self-service installment repayment: OTP onboarding, PIN login, a consolidated view of financed purchases, each schedule with its price breakdown &mdash; principal, gateway charge, due date &mdash; full payment history, and settlement of a due installment with a real-time result. Replaces a branch or agent visit.</p>
+                  <ul class="tree__tags"><li>Flutter</li><li>Riverpod</li><li>Freezed</li><li>Dio</li><li>Injectable</li></ul>
+                  <a class="tree__store" href="https://play.google.com/store/apps/details?id=com.sslwireless.lockercustomerpayment" target="_blank" rel="noopener noreferrer"><svg class="tree__store-ico" aria-hidden="true"><use href="#i-play"/></svg>play_store()<svg class="tree__store-ext" aria-hidden="true"><use href="#i-external"/></svg></a>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">rmg-erp</span><span class="tree__desc">Garments export ERP client &middot; requisitions, LC bookings</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">rmg-erp</span>
+                  <span class="tree__desc">Garments export ERP client &middot; requisitions, LC bookings</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">The field-and-office companion to a garments export ERP. Digitises the pre-shipment commercial pipeline: customers and brands, supplier and competitor pricing, delivery requisitions and approvals, and export bookings carrying Letter-of-Credit tenures, proforma invoices and revision histories. Heavily form-and-list driven, with server-side filtering, paginated lists and attachment upload.</p>
+                  <ul class="tree__tags"><li>Flutter</li><li>Riverpod</li><li>Freezed</li><li>ScreenUtil</li><li>pagination</li></ul>
+                  <a class="tree__store" href="https://play.google.com/store/apps/details?id=com.sslwireless.rmg" target="_blank" rel="noopener noreferrer"><svg class="tree__store-ico" aria-hidden="true"><use href="#i-play"/></svg>play_store()<svg class="tree__store-ext" aria-hidden="true"><use href="#i-external"/></svg></a>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">bhalobashar-gulshan</span><span class="tree__desc">Community safety reporting &middot; three community builds</span></span>
-              <ul class="tree__kids"><li>Bhalobashar Gulshan</li><li>Quick Response</li><li>Quick Response Dhanmondi</li></ul>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">bhalobashar-gulshan</span>
+                  <span class="tree__desc">Community safety reporting &middot; three community builds</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">Community safety reporting built for a non-technical audience in a time-critical moment: an incident goes out in two taps with photos, a voice note and GPS attached, then the resident tracks the response live. Designed to survive flaky connectivity, bilingual, with push for security alerts and emergencies. ~180 Dart files across 11 feature modules, a server-driven dynamic form engine, and a full image, audio and location capture pipeline.</p>
+                  <ul class="tree__tags"><li>Flutter</li><li>Riverpod</li><li>Dio</li><li>media capture</li><li>offline resilience</li></ul>
+                  <ul class="tree__kids"><li class="has-store"><a href="https://play.google.com/store/apps/details?id=com.sslwireless.quickresponsegulshan" target="_blank" rel="noopener noreferrer" aria-label="Bhalobashar Gulshan on Google Play (opens in a new tab)">Bhalobashar Gulshan<svg class="tree__kid-ico" aria-hidden="true"><use href="#i-play"/></svg></a></li><li class="has-store"><a href="https://play.google.com/store/apps/details?id=com.sslwireless.emergencyalert" target="_blank" rel="noopener noreferrer" aria-label="Quick Response on Google Play (opens in a new tab)">Quick Response<svg class="tree__kid-ico" aria-hidden="true"><use href="#i-play"/></svg></a></li><li class="has-store"><a href="https://play.google.com/store/apps/details?id=com.sslwireless.quickresponsedhanmondi" target="_blank" rel="noopener noreferrer" aria-label="Quick Response Dhanmondi on Google Play (opens in a new tab)">Quick Response Dhanmondi<svg class="tree__kid-ico" aria-hidden="true"><use href="#i-play"/></svg></a></li></ul>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">cold-storage</span><span class="tree__desc">IoT cold-chain monitoring &middot; live sensor telemetry</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">cold-storage</span>
+                  <span class="tree__desc">IoT cold-chain monitoring &middot; live sensor telemetry</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">Live visibility into refrigeration infrastructure, where a sensor drift or a failed compressor can spoil a chamber&rsquo;s stock within hours. Streams temperature, humidity and battery from every chamber across an organisation&rsquo;s branches, classifies each as optimal, critical or offline, and surfaces it through dashboards, gauges, trend charts and a paginated alert history. Push escalates critical events with the app closed.</p>
+                  <ul class="tree__tags"><li>Flutter</li><li>Riverpod</li><li>Freezed</li><li>WebSocket</li><li>Injectable</li></ul>
+                </div>
+              </details>
             </li>
             </ul>
           </section>
@@ -373,40 +469,164 @@
             <h3 class="tree__cap"><svg class="tree__ico tint-k" aria-hidden="true"><use href="#t-kotlin"/></svg>native/<span class="tree__count">12</span></h3>
             <ul class="tree__list">
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">easy-merchant</span><span class="tree__desc">Merchant super-app &middot; the original native build</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">easy-merchant</span>
+                  <span class="tree__desc">Merchant super-app &middot; the original native build</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">The original native Android build, and the codebase the Flutter migration was carried across from. QR acceptance, instant payment notification and settlement to a bank account, plus the ledger, recharge, KYC and card tooling around it. The live store listing now serves the Flutter build.</p>
+                  <ul class="tree__tags"><li>Kotlin</li><li>MVVM</li><li>Hilt</li><li>Retrofit</li><li>Room</li></ul>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">sslcommerz-sdk</span><span class="tree__desc">Drop-in payment SDK &middot; Kotlin + Compose rewrite</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">sslcommerz-sdk</span>
+                  <span class="tree__desc">Drop-in payment SDK &middot; Kotlin + Compose rewrite</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">A drop-in Android payment SDK: the host app hands over an order &mdash; amount, currency, customer, product, shipment, EMI terms &mdash; and the SDK owns the entire checkout UI and transaction lifecycle, returning a structured result. A ground-up rewrite of the legacy SDK from a View/XML integration to 100% Kotlin and Compose, shipped as a library module alongside a demo host app that exercises the public integration surface.</p>
+                  <ul class="tree__tags"><li>Kotlin</li><li>Compose</li><li>kotlinx.serialization</li><li>Maven</li></ul>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">cashbaba-sdk</span><span class="tree__desc">Payment SDK for untrusted host apps &middot; PCI-scoped</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">cashbaba-sdk</span>
+                  <span class="tree__desc">Payment SDK for untrusted host apps &middot; PCI-scoped</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">A payment SDK engineered for a hostile client: it runs inside merchant apps the author does not control, on devices that cannot be trusted, so transport, on-device storage and the shipped artifact are each treated as an attack surface. A narrow public surface exposes eight self-contained flows, each launching a self-hosted Compose experience for PIN entry, OTP and biometric liveness and returning success, failure or cancel. Sessions are timeboxed to a server-issued token and retain no payment data. The demo harness is deliberately built on a different DI and storage stack, proving clean consumption of the published artifact.</p>
+                  <ul class="tree__tags"><li>Kotlin</li><li>Compose</li><li>Koin</li><li>kotlinx.serialization</li></ul>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">silknet</span><span class="tree__desc">Telecom self-care &middot; Georgia &middot; key Android engineer</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">silknet</span>
+                  <span class="tree__desc">Telecom self-care &middot; Georgia &middot; key Android engineer</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">Key Android engineer on the flagship self-care app of Georgia&rsquo;s largest telecom. Built the custom bundle builder &mdash; an interactive voice, SMS and data combination picker with reactive cost calculation and constraint checking &mdash; and the full stories and campaigns carousel, including local watch-progress persistence and a reordering algorithm that pushes fully watched items to the end of the feed.</p>
+                  <ul class="tree__tags"><li>Kotlin</li><li>Compose</li><li>Hilt</li><li>Room</li><li>Moshi</li><li>MVI</li></ul>
+                  <a class="tree__store" href="https://play.google.com/store/apps/details?id=com.mediapark.silknet.release" target="_blank" rel="noopener noreferrer"><svg class="tree__store-ico" aria-hidden="true"><use href="#i-play"/></svg>play_store()<svg class="tree__store-ext" aria-hidden="true"><use href="#i-external"/></svg></a>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">partner-app</span><span class="tree__desc">Retail field operations &middot; performance, rewards, capital</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">partner-app</span>
+                  <span class="tree__desc">Retail field operations &middot; performance, rewards, capital</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">A retail-empowerment platform built for British American Tobacco, putting performance, rewards, working capital, inventory and brand communication for its field retailers and distribution partners into one app. Bilingual with runtime locale switching, an offline-tolerant data layer, and a security-first network stack appropriate to a rewards- and payment-adjacent product. Around 53 features in a single-module, single-activity Compose architecture.</p>
+                  <ul class="tree__tags"><li>Kotlin</li><li>Compose</li><li>single-activity</li><li>offline-tolerant</li></ul>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">android-arch</span><span class="tree__desc">Reference architecture + HRIS companion app</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">android-arch</span>
+                  <span class="tree__desc">Reference architecture + HRIS companion app</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">Two things at once: a living reference architecture that standardises how every Android feature in the organisation gets built, and a working employee app on an HRIS backend. Every network call, screen, dependency graph and state transition follows one documented pattern, with architecture contracts kept as per-directory README files, so a new feature drops in without re-litigating structure. This is the architecture the <code>android_mvvm</code> diagram above draws.</p>
+                  <ul class="tree__tags"><li>Kotlin</li><li>Compose</li><li>Hilt</li><li>Retrofit</li><li>Room</li><li>Paging 3</li></ul>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">banglapay</span><span class="tree__desc">Mobile banking super-app for SBAC Bank</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">banglapay</span>
+                  <span class="tree__desc">Mobile banking super-app for SBAC Bank</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">A retail mobile-banking super-app: account management, money movement across every major domestic rail, bill and merchant payment, card servicing and agent-banking cash-out, behind a layered credential-gated security model. Broad enough to remove most reasons to visit a branch. Around 525 source files, 219 layouts, 80+ screens and 34 API modules.</p>
+                  <ul class="tree__tags"><li>Java</li><li>Kotlin</li><li>Android SDK</li><li>javax.crypto</li></ul>
+                  <a class="tree__store" href="https://play.google.com/store/apps/details?id=com.sbac" target="_blank" rel="noopener noreferrer"><svg class="tree__store-ico" aria-hidden="true"><use href="#i-play"/></svg>play_store()<svg class="tree__store-ext" aria-hidden="true"><use href="#i-external"/></svg></a>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">nrb-click</span><span class="tree__desc">Retail internet banking for NRB Bank</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">nrb-click</span>
+                  <span class="tree__desc">Retail internet banking for NRB Bank</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">The official retail internet-banking app of a fourth-generation Bangladeshi bank, unifying bank account, card and agent-banking identities behind one authenticated experience. Intra-bank and interbank transfer over BEFTN and NPSB, credit-card bill payment, mobile-wallet cash-out, airtime top-up, and Bangla QR merchant payment sourced from either an account or a card.</p>
+                  <ul class="tree__tags"><li>Kotlin</li><li>Android SDK</li><li>bank-grade TLS</li></ul>
+                  <a class="tree__store" href="https://play.google.com/store/apps/details?id=com.sslwireless.nrbmobapp" target="_blank" rel="noopener noreferrer"><svg class="tree__store-ico" aria-hidden="true"><use href="#i-play"/></svg>play_store()<svg class="tree__store-ext" aria-hidden="true"><use href="#i-external"/></svg></a>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">dhaka-thai</span><span class="tree__desc">Sales-force automation &middot; attendance, orders, collections</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">dhaka-thai</span>
+                  <span class="tree__desc">Sales-force automation &middot; attendance, orders, collections</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">Sales-force automation for a brand&rsquo;s distribution network. One binary drives four role-aware experiences &mdash; regional managers, dealers, sales reps and fabricators &mdash; with the visible feature set gated by server-issued permissions at login. Attendance and location tracking, outlet visits, order taking, cash and cheque collection. GPS breadcrumbs and geo-tagged visit photos give management near-real-time field visibility; staff get an offline-capable workflow that syncs on reconnect.</p>
+                  <ul class="tree__tags"><li>Kotlin</li><li>Compose</li><li>role-gated</li><li>offline-capable</li></ul>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">luxxle</span><span class="tree__desc">Privacy browser &middot; hardened Firefox/GeckoView fork</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">luxxle</span>
+                  <span class="tree__desc">Privacy browser &middot; hardened Firefox/GeckoView fork</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">A privacy browser derived from Firefox for Android and the Mozilla Android Components platform, shipping Mozilla&rsquo;s full GeckoView engine rather than wrapping the system WebView &mdash; so it carries its own rendering pipeline, first-class tracking protection and WebExtension support. Not a reskin: the engine, search stack and branding layer were re-engineered around a first-party search provider with web, image, video, news and visual verticals, a custom user-agent identity, and tracking protection on by default.</p>
+                  <ul class="tree__tags"><li>Kotlin</li><li>GeckoView</li><li>Mozilla Components</li><li>Room</li></ul>
+                  <a class="tree__store" href="https://play.google.com/store/apps/details?id=org.luxxle.luxxle" target="_blank" rel="noopener noreferrer"><svg class="tree__store-ico" aria-hidden="true"><use href="#i-play"/></svg>play_store()<svg class="tree__store-ext" aria-hidden="true"><use href="#i-external"/></svg></a>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">nfc-hce</span><span class="tree__desc">Device-to-device NFC transfer &middot; host card emulation</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">nfc-hce</span>
+                  <span class="tree__desc">Device-to-device NFC transfer &middot; host card emulation</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">Contactless phone-to-phone data transfer over NFC with no internet, no pairing and no server: a card-emulator app that makes a handset indistinguishable from a physical contactless tag, and a reader counterpart that drives the full read protocol. The NFC Forum Type 4 Tag specification and the underlying ISO 7816-4 APDU exchange are implemented by hand on both sides rather than leaning on deprecated Android Beam or a third-party SDK. Built as the transport prototype behind a wallet fund-transfer feature.</p>
+                  <ul class="tree__tags"><li>Kotlin</li><li>Android NFC</li><li>HCE</li><li>ISO 7816-4</li></ul>
+                </div>
+              </details>
             </li>
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">sentinel</span><span class="tree__desc">Supervised face-data capture &middot; offline-first sync</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">sentinel</span>
+                  <span class="tree__desc">Supervised face-data capture &middot; offline-first sync</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">Supervised on-site face-data capture for employees: an operator registers a profile, plays a mandatory instructional video, records a short face video with a purpose-built camera, and the app ships the recording and its metadata to cloud storage. Offline-first because field connectivity is intermittent &mdash; captures are enqueued in an on-device database and uploaded by a foreground service that survives backgrounding, tracks per-file progress, retries failures, and cleans up local files once a transfer is confirmed.</p>
+                  <ul class="tree__tags"><li>Kotlin</li><li>Compose</li><li>CameraX</li><li>foreground service</li><li>offline-first</li></ul>
+                </div>
+              </details>
             </li>
             </ul>
           </section>
@@ -414,13 +634,23 @@
             <h3 class="tree__cap"><svg class="tree__ico tint-c" aria-hidden="true"><use href="#t-compose"/></svg>kmm/<span class="tree__count">1</span></h3>
             <ul class="tree__list">
             <li class="tree__item">
-              <span class="tree__row"><span class="tree__name">sslcommerz-sdk</span><span class="tree__desc">One Kotlin source &rarr; Android AAR + iOS XCFramework</span></span>
+              <details class="tree__d">
+                <summary class="tree__row">
+                  <svg class="tree__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+                  <span class="tree__name">sslcommerz-sdk</span>
+                  <span class="tree__desc">One Kotlin source &rarr; Android AAR + iOS XCFramework</span>
+                </summary>
+                <div class="tree__panel">
+                  <p class="tree__detail">The Kotlin Multiplatform rewrite of the native SDK. Rather than maintaining two divergent native codebases, the payment flow, business logic, networking, persistence and UI are authored once in shared Kotlin and Compose Multiplatform, then compiled to an Android AAR and an iOS XCFramework. Merchants integrate one dependency and present the SDK in two lines; it owns the whole checkout. Locale-aware, covering cards, MFS wallets, QR, net banking, EMI and Google Pay.</p>
+                  <ul class="tree__tags"><li>Kotlin Multiplatform</li><li>Compose Multiplatform</li><li>expect/actual</li><li>AAR</li><li>XCFramework</li></ul>
+                </div>
+              </details>
             </li>
             </ul>
           </section>
           </div>
         </div>
-        <div class="pane__status"><span>EXPLORER</span><span>20 projects</span><span class="pane__status-end">2 stacks + KMM</span></div>
+        <div class="pane__status"><span>EXPLORER</span><span>20 projects</span><span class="pane__status-end">open a row for detail</span></div>
       </article>
 
       <article class="pane pane--dvA">
