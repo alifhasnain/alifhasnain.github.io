@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>og card — 1200×630 generator</title>
+  <!--
+  Source for assets/img/og.png. Not linked from the site; delete it or keep it
+  as the regeneration path. It draws on a 1200×630 canvas rather than laying the
+  card out in the DOM, because a canvas can be exported losslessly while a
+  screenshot cannot — and it pulls site.css so every colour and both faces come
+  from the same tokens and the same self-hosted woff2 the page uses.
+
+  Regenerate:
+    python tools/og-save-server.py        # serves the repo on :4892 with a POST sink
+    open http://127.0.0.1:4892/tools/og-card.html and press the button
+  A plain `python -m http.server` also renders the card, but has nowhere to POST
+  the PNG — the sink is the only reason the second server exists.
+  -->
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    body { background: #050807; color: #93aaa0; font-family: var(--mono); padding: 22px; }
+    canvas { border: 1px solid var(--rule); max-width: 100%; height: auto; display: block; margin-bottom: 14px; }
+    button { font: inherit; font-size: .74rem; color: var(--phos); background: none; border: 1px solid var(--phos-dim); border-radius: 3px; padding: 8px 16px; cursor: pointer; }
+    #out { font-size: .74rem; margin-top: 10px; }
+  </style>
+</head>
+
+<body>
+  <canvas id="c" width="1200" height="630"></canvas>
+  <button id="save">POST to /_save</button>
+  <p id="out"></p>
+
+  <script>
+    const T = {
+      ground: '#080d0b', panel2: '#101a17', rule: '#1b2a25', ruleHot: '#27443a',
+      phos: '#3df08a', phosDim: '#17a05c', text: '#dfeae4', text2: '#93aaa0',
+      /* Opaque, unlike the page's panes: the traces are a full-page ornament
+         there, but on a 1200×630 crop they read as scratches through the glass,
+         so here they stay in the margin the pane leaves. */
+      text3: '#64796f', sync: '#55685f', paneFill: '#0c1311',
+      chipFill: 'rgba(16,26,23,0.7)',
+      mono: '"JetBrains Mono", monospace', display: '"Martian Mono", monospace'
+    };
+
+    const c = document.getElementById('c');
+    const x = c.getContext('2d');
+
+    function text(str, px, py, { size = 16, color = T.text2, face = T.mono, weight = 400, track = '0px' } = {}) {
+      x.save();
+      x.font = `${weight} ${size}px ${face}`;
+      x.letterSpacing = track;
+      x.fillStyle = color;
+      x.textBaseline = 'alphabetic';
+      x.fillText(str, px, py);
+      const w = x.measureText(str).width;
+      x.restore();
+      return w;
+    }
+
+    function box(px, py, w, h, { fill, stroke, r = 3 } = {}) {
+      x.beginPath();
+      x.roundRect(px, py, w, h, r);
+      if (fill) { x.fillStyle = fill; x.fill(); }
+      if (stroke) { x.strokeStyle = stroke; x.lineWidth = 1; x.stroke(); }
+    }
+
+    /* A hairline is 1px, so it sits on a half-pixel to stay 1px after raster. */
+    function line(x1, y1, x2, y2, color = T.rule) {
+      x.beginPath();
+      x.strokeStyle = color; x.lineWidth = 1;
+      x.moveTo(x1, y1 + 0.5); x.lineTo(x2, y2 + 0.5);
+      x.stroke();
+    }
+
+    async function draw() {
+      await document.fonts.load('700 47px "Martian Mono"');
+      await document.fonts.load('400 17px "JetBrains Mono"');
+      await document.fonts.ready;
+
+      /* ground */
+      x.fillStyle = T.ground;
+      x.fillRect(0, 0, 1200, 630);
+
+      /* circuit traces — the page's ground ornament, same hairline colour */
+      x.strokeStyle = T.rule; x.lineWidth = 1;
+      const traces = [
+        [[0, 96], [214, 96], [254, 136], [460, 136]],
+        [[1200, 168], [986, 168], [948, 130], [742, 130]],
+        [[0, 540], [150, 540], [196, 494], [420, 494]],
+        [[1200, 462], [1010, 462], [966, 506], [700, 506]]
+      ];
+      traces.forEach(pts => {
+        x.beginPath();
+        pts.forEach(([px, py], i) => i ? x.lineTo(px, py + .5) : x.moveTo(px, py + .5));
+        x.stroke();
+      });
+      [[460, 136], [742, 130], [420, 494], [700, 506]].forEach(([px, py]) => {
+        x.beginPath(); x.fillStyle = T.rule; x.arc(px, py, 3, 0, Math.PI * 2); x.fill();
+      });
+
+      /* pane: title strip, body, status strip */
+      const PX = 26, PY = 26, PW = 1148, PH = 578;
+      box(PX + .5, PY + .5, PW - 1, PH - 1, { fill: T.paneFill, stroke: T.rule, r: 5 });
+
+      /* title strip */
+      x.save();
+      x.beginPath(); x.roundRect(PX + .5, PY + .5, PW - 1, 46, { tl: 5, tr: 5, br: 0, bl: 0 });
+      x.fillStyle = T.panel2; x.fill();
+      x.restore();
+      line(PX, PY + 46, PX + PW, PY + 46);
+
+      /* terminal glyph, drawn from the page's own #i-terminal path at 18px */
+      x.save();
+      x.translate(PX + 18, PY + 14);
+      x.scale(18 / 24, 18 / 24);
+      x.strokeStyle = T.phosDim; x.lineWidth = 1.5 * (24 / 18);
+      x.lineCap = 'round'; x.lineJoin = 'round';
+      x.beginPath(); x.rect(3, 4.5, 18, 15); x.stroke();
+      x.beginPath(); x.moveTo(6.8, 10.2); x.lineTo(9.2, 12.5); x.lineTo(6.8, 14.8); x.stroke();
+      x.beginPath(); x.moveTo(12.4, 14.8); x.lineTo(17, 14.8); x.stroke();
+      x.restore();
+
+      let tx = PX + 44;
+      tx += text('/dev/portfolio', tx, PY + 30, { size: 15, color: T.text, weight: 500, track: '.02em' });
+      text(' — whoami', tx, PY + 30, { size: 15, color: T.text2, track: '.02em' });
+
+      [0, 1, 2].forEach(i => {
+        x.beginPath();
+        x.arc(PX + PW - 26 - i * 15, PY + 23, 4, 0, Math.PI * 2);
+        x.strokeStyle = T.ruleHot; x.lineWidth = 1; x.stroke();
+      });
+
+      /* body */
+      const BX = PX + 38, BY = PY + 46 + 34, BR = PX + PW - 38, BB = PY + PH - 42 - 30;
+
+      /* portrait — object-fit: cover against a 620×720 source, greyscaled like
+         the page's .portrait__frame */
+      const pw = 268, ph = BB - BY;
+      const img = new Image();
+      img.src = '../assets/img/portrait.webp';
+      await img.decode();
+      const targetAR = pw / ph, srcAR = img.width / img.height;
+      let sw = img.width, sh = img.height, sx = 0, sy = 0;
+      if (srcAR > targetAR) { sw = img.height * targetAR; sx = (img.width - sw) / 2; }
+      else { sh = img.width / targetAR; sy = (img.height - sh) * 0.12; }
+      x.save();
+      x.beginPath(); x.roundRect(BX, BY, pw, ph, 3); x.clip();
+      x.filter = 'grayscale(1) contrast(1.06) brightness(0.94)';
+      x.drawImage(img, sx, sy, sw, sh, BX, BY, pw, ph);
+      x.restore();
+      box(BX + .5, BY + .5, pw - 1, ph - 1, { stroke: T.rule, r: 3 });
+
+      /* copy column — the stack is a fixed height, so it centres against the
+         portrait instead of hanging from the top with dead space beneath. */
+      const CX = BX + pw + 34;
+      const STACK_H = 292;
+      let cy = BY + Math.round((ph - STACK_H) / 2) + 15;
+
+      let px2 = CX;
+      px2 += text('developer@portfolio', px2, cy, { size: 17, color: T.phos, track: '.01em' });
+      px2 += text(':~$', px2, cy, { size: 17, color: T.text2, track: '.01em' });
+      text(' whoami', px2, cy, { size: 17, color: T.phos, track: '.01em' });
+
+      cy += 62;
+      text('Mohammad Alif', CX, cy, { size: 47, color: T.text, face: T.display, weight: 700, track: '.01em' });
+      cy += 55;
+      text('Hasnain', CX, cy, { size: 47, color: T.text, face: T.display, weight: 700, track: '.01em' });
+
+      cy += 42;
+      text('Senior Mobile App Developer', CX, cy, { size: 25, color: T.phos, track: '.01em' });
+
+      cy += 26;
+      line(CX, cy, BR, cy);
+
+      /* stack chips */
+      cy += 22;
+      let chipX = CX;
+      x.save();
+      x.font = '400 16px ' + T.mono;
+      x.letterSpacing = '.02em';
+      ['Kotlin', 'Jetpack Compose', 'Dart', 'Flutter', 'Riverpod', 'MVVM'].forEach(label => {
+        const w = Math.round(x.measureText(label).width) + 22;
+        if (chipX + w > BR) { chipX = CX; cy += 41; }
+        box(chipX + .5, cy + .5, w - 1, 33, { fill: T.chipFill, stroke: T.rule, r: 3 });
+        text(label, chipX + 11, cy + 22, { size: 16, color: T.text2, track: '.02em' });
+        chipX += w + 9;
+      });
+      x.restore();
+
+      /* closing line, one step under the chips */
+      cy += 63;
+      let wx = CX;
+      wx += text('Native Android and Flutter, held at the same depth', wx, cy, { size: 16, color: T.text3, track: '.01em' });
+      text(' · Dhaka, Bangladesh', wx, cy, { size: 16, color: T.sync, track: '.01em' });
+
+      /* status strip */
+      const SY = PY + PH - 42;
+      x.save();
+      x.beginPath(); x.roundRect(PX + .5, SY + .5, PW - 1, 41, { tl: 0, tr: 0, br: 5, bl: 5 });
+      x.fillStyle = T.panel2; x.fill();
+      x.restore();
+      line(PX, SY, PX + PW, SY);
+
+      let sx2 = PX + 18;
+      sx2 += text('READY', sx2, SY + 26, { size: 14, color: T.phos, track: '.06em' }) + 18;
+      text('BASH', sx2, SY + 26, { size: 14, color: T.text3, track: '.06em' });
+
+      x.save();
+      x.font = '400 14px ' + T.mono;
+      x.letterSpacing = '.01em';
+      const endW = x.measureText('github.com/alifhasnain').width;
+      x.restore();
+      text('github.com/alifhasnain', PX + PW - 18 - endW, SY + 26, { size: 14, color: T.text2, track: '.01em' });
+    }
+
+    document.getElementById('save').addEventListener('click', () => {
+      c.toBlob(blob => {
+        fetch('/_save', { method: 'POST', body: blob })
+          .then(r => r.text())
+          .then(t => document.getElementById('out').textContent = t)
+          .catch(e => document.getElementById('out').textContent = 'failed: ' + e.message);
+      }, 'image/png');
+    });
+
+    draw().then(() => { window.__drawn = true; });
+  </script>
+</body>
+
+</html>

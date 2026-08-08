@@ -196,7 +196,7 @@
       "kind": "custom",
       "refersTo": "label",
       "description": "The page footer as a live shell prompt with a blinking block caret.",
-      "html": "<p class=\"ds-prompt\"><span class=\"ds-pr\">developer@portfolio</span><span class=\"ds-pt\">:~$</span> <span class=\"ds-typed\">cat PLACEHOLDERS.md</span><span class=\"ds-caret-blink\" aria-hidden=\"true\"></span></p>",
+      "html": "<p class=\"ds-prompt\"><span class=\"ds-pr\">developer@portfolio</span><span class=\"ds-pt\">:~$</span> <span class=\"ds-typed\">cat contact.json</span><span class=\"ds-caret-blink\" aria-hidden=\"true\"></span></p>",
       "css": ".ds-prompt { display: flex; align-items: baseline; gap: .35em; margin: 0; padding: 10px 14px; background: rgb(6 10 9 / .94); border-top: 1px solid #1b2a25; font-family: \"JetBrains Mono\", ui-monospace, monospace; font-size: .68rem; white-space: nowrap; } .ds-pr { color: #3df08a; } .ds-pt { color: #6fd3f0; } .ds-typed { color: #93aaa0; } .ds-caret-blink { display: inline-block; width: .55em; height: 1.05em; background: #3df08a; vertical-align: text-bottom; animation: ds-blink 1.15s steps(2, start) infinite; } @keyframes ds-blink { 50% { opacity: 0; } } @media (prefers-reduced-motion: reduce) { .ds-caret-blink { animation: none; } }"
     }
   ],

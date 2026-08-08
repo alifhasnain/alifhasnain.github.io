@@ -118,6 +118,15 @@
       });
     }
 
+    /* True when the document cannot scroll any further. Viewport-relative like
+       everything else here — body's own bottom edge rather than scrollY — so it
+       holds whichever element turns out to be the scroll container. A page too
+       short to scroll returns false: there the scan line is already right. */
+    function atEnd() {
+      if (root.scrollHeight <= root.clientHeight + 2) return false;
+      return document.body.getBoundingClientRect().bottom <= root.clientHeight + 2;
+    }
+
     function pick() {
       if (!groups.length) return null;
       /* The scan line sits just under the fixed bar — the first row of content a
@@ -129,6 +138,13 @@
       for (var i = 0; i < groups.length; i++) {
         if (groups[i].top <= line) g = groups[i]; else break;
       }
+
+      /* The last section is the one case the scan line cannot reach. #contact is
+         shorter than the viewport and nothing follows it, so at maximum scroll
+         its top still sits below the bar and #credentials keeps the highlight
+         while the reader is looking straight at contact. At the end of the
+         document, the end of the document wins. */
+      if (atEnd()) g = groups[groups.length - 1];
 
       if (pinned) {
         if (g.members.indexOf(pinned) !== -1) { lock = 0; return pinned; }

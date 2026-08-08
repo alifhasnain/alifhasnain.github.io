@@ -204,7 +204,7 @@ that appears only inside code.
 
 ### Primary
 - **Phosphor Green** (`#3df08a`): the interface voice. Display headline, active states,
-  prompt sigils, LEDs, meter fill, the `>_` caret on every control, and the primary
+  prompt sigils, LEDs, tally cells, the `>_` caret on every control, and the primary
   button's border and text. It carries a soft bloom (`text-shadow: 0 0 26px`) on
   display type only — the one place the CRT metaphor is rendered rather than implied.
 - **Link Green** (`#2bd478`): inline links inside body copy, underlined at 34% opacity
@@ -212,15 +212,15 @@ that appears only inside code.
 - **Dim Green** (`#17a05c`): the `//` in section markers, diagram box strokes, timeline
   rules, key labels in readouts. This is green at working weight — the shade that lets
   the bright green stay rare.
-- **Deep Green** (`#0b4c2d`): meter troughs, selection background, the tint under a
-  hovered control.
+- **Deep Green** (`#0b4c2d`): selection background, chip and control borders, the tint
+  under a hovered control.
 
 ### Secondary
 - **Signal Teal** (`#35d3c4`): annotations (`@Composable`, `@override`) and diagram edge
   labels (`Events`, `Response`). A second technical voice, never a brand accent.
-- **Caution Amber** (`#e3b341`): the honesty colour. The `draft` chip, the `sample data`
-  chip, and every placeholder that stands where a factual claim will go. Amber means
-  *this is not verified yet* and is used for nothing else.
+- **Caution Amber** (`#e3b341`): the honesty colour. The `sample data` chip, the resting
+  state of `.statuschip`, and every placeholder that stands where a factual claim will go.
+  Amber means *this is not verified yet* and is used for nothing else.
 
 ### Tertiary — Technology Marks
 The one place a hue is allowed to mean *a named thing in the world* rather than a system
@@ -381,8 +381,8 @@ a blur — never a zero-offset halo.
 - **Pane engaged** (`box-shadow: 0 1px 0 rgb(255 255 255 / .03), 0 18px 40px -16px rgb(0 0 0 / .96)`):
   on `:hover` and `:focus-within`, paired with the border moving to Hairline Live.
 - **Phosphor bloom** (`text-shadow: 0 0 26px rgb(61 240 138 / .28)`, and `0 0 8px` on LEDs):
-  not depth. This is the CRT material — permitted on green display type, LEDs, meter fill,
-  and the contribution grid's brightest cells, nowhere else.
+  not depth. This is the CRT material — permitted on green display type, LEDs, and the
+  tally cells in SYSTEM.INFO, nowhere else.
 
 ### Named Rules
 **The Hairline-First Rule.** Reach for a 1px border or a tonal step before reaching for a
@@ -395,9 +395,8 @@ light sources only. A glow on a panel, a card, or a button fill is decoration an
 
 Nearly rectangular, with the smallest radius that still reads as software. Panes take 5px;
 every control-scale element — icon buttons, the activity-rail box, tech tiles, scrollbar
-thumbs — takes 3px; chips and meters take 2px or 0; the contribution grid's 7px cells take
-1px. Nothing on the page is a pill, and nothing is a circle except an LED, a window dot,
-and the contribution ring.
+thumbs — takes 3px; chips take 2px or 0; the 4×9px tally cells take 1px. Nothing on the
+page is a pill, and nothing is a circle except an LED and a window dot.
 
 Borders are always exactly 1px. The system uses left-hairlines (1px, never more) to mark
 quoted or set-aside prose — the mission block, the platform-choice picks, the markdown
@@ -437,8 +436,12 @@ Terminal commands rendered as controls. Every label is a callable — `view_proj
 ### Chips
 - **Style:** 1px border at ~32% of the chip's own hue, transparent ground, `0.6–0.62rem`,
   `0.12em` tracking, uppercase, 2px radius.
-- **Variants:** `draft` (amber, with a glowing 5px dot) and `sample data` (amber, no dot).
-  Both are honesty markers, not decoration.
+- **Variants:** `.statuschip` (amber at rest, with a glowing 5px dot) and `sample data`
+  (amber, no dot). Both are honesty markers, not decoration.
+- **`.statuschip--live`:** the same chip in Phosphor, for a statement that is true now
+  rather than pending — currently `● open to work` in the top bar. The hue carries the
+  meaning, so a live chip must never sit in amber and a pending one must never sit in
+  green. Border stays at ~30% of whichever hue the chip holds.
 
 ### Panes / Containers
 - **Corner Style:** 5px.
@@ -505,8 +508,8 @@ hidden from assistive technology. Anything that looks pressable must do somethin
 - **Do** keep every hue in one of the four channels — green interface, code syntax, amber
   honesty, technology marks on icons.
 - **Do** reuse an existing type step rather than adding one within `0.03rem` of it.
-- **Do** mark anything unverified in amber or `[BRACKET_CASE]`, and keep the `draft` and
-  `sample data` chips until the content behind them is real.
+- **Do** mark anything unverified in amber or `[BRACKET_CASE]`, and keep an amber
+  `.statuschip` or `sample data` chip until the content behind it is real.
 - **Do** draw new icons as SVG on the existing 24px grid at 1.4–1.6 stroke width.
 - **Do** let code scroll horizontally inside its pane rather than shrinking below `0.66rem`
   or wrapping mid-expression.

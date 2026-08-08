@@ -75,7 +75,7 @@ lines from your CV's own wording.
 | ~~`[9]` `[7]` `[3]`~~ | SYSTEM.INFO | **Done** — four real rows: Kotlin 9, Dart 8, Java 8, Swift 7. Bar widths are `style="--fill:N"`, set to 14/12/12/11 (≈1.55 blocks per app; the 134px track holds 16). Change a count and change its `--fill` with it. |
 | ~~`[N] shipped apps`~~ | SYSTEM.INFO | **Done** — `35+ apps`. The four language counts sum to 32, so 35+ leaves room for the rest; keep those consistent if you edit either. |
 | `[N] working days` | contact session | Your real reply time |
-| ~~`[N] years`~~ | README pane | **Done** — reads `5+ years`, computed from Feb 2021 (IOTA start) to now. Bump the phrasing if you count differently. |
+| ~~`[N] years`~~ | README pane | **Done** — reads `5.5+ years`, computed from Feb 2021 (IOTA start) to now. Bump the phrasing if you count differently. |
 | `[CLAUDE_CODE_101_URL]` | `#credentials` → Certifications | Verification URL for the Claude Code 101 certificate. The other two rows link to real proofs (Coursera verify page, Google Drive PDF). Until this is real the row still opens a new tab — to a dead address. |
 
 The GitHub statistics panel and its seeded contribution grid are **gone**, along
@@ -89,7 +89,7 @@ it (`MIT`, `0.1.0`, `Android`, `dio`) is read from the `falconer` repo.
 |---|---|
 | `assets/alif-hasnain-resume.pdf` | ⚠ **Missing.** Three links point at this exact name — top bar (visible at every scroll depth), `download_cv()`, and the contact pane. Until the file exists, your second CTA 404s. |
 | ~~`assets/img/portrait-placeholder.svg`~~ | **Done** — `assets/img/portrait.webp` is a real photo at 620×720. The pane is greyscaled by CSS (`.portrait__frame img`); the source is already monochrome, so that filter only adds the contrast/brightness trim. |
-| `assets/img/og.png` | Social share image, 1200×630. Referenced by `og:image`. |
+| ~~`assets/img/og.png`~~ | **Done** — 1200×630, drawn from the site's own tokens and both woff2 faces by `tools/og-card.html` (canvas → POST → `tools/og-save-server.py`). Redraw it after any token, portrait or wording change; it is a picture of the design, so it goes stale silently. ⚠ `og:image` is still a **relative** path — Facebook, LinkedIn and Slack want an absolute URL, so it needs `https://<domain>/…` once the deploy target exists. |
 
 ## 5. Sample content — authored, replace when you can
 
@@ -145,15 +145,28 @@ These are written at full quality so the layout is real, and are marked
 - **`platform_choice.md` pane** — this is the one section a competitor cannot
   copy from you. Read it, then make it genuinely yours.
 
-## 6. Remove the draft marker when done
+## 6. Draft markers — **removed at the owner's instruction**
 
-- `.draftchip` in the top bar (`● draft`)
-- `.samplechip` — no longer used in the markup; the CSS rule is kept because
-  DESIGN.md documents it as a chip variant. Reach for it if you ever ship a
-  number that is real but not yet verifiable.
-- every `<span class="sample">// …</span>` note
-- the typed footer command `data-type="cat PLACEHOLDERS.md"` → change to
-  whatever you like
+Both site-level draft signals are gone, ahead of the remaining tokens below:
+
+- ~~`.draftchip` (`● draft`, amber)~~ → now `.statuschip .statuschip--live`
+  reading `● open to work` in Phosphor. Amber meant *unverified*, so the hue had
+  to move with the meaning; `.statuschip` still defaults to amber for the next
+  time something on the page is pending.
+- ~~`data-type="cat PLACEHOLDERS.md"`~~ → `cat contact.json`, which points at a
+  pane that actually exists on the page.
+
+⚠ **The page no longer announces itself as a draft, so what is left reads as
+finished rather than pending.** Two of those now read as *broken* instead:
+
+- `assets/alif-hasnain-resume.pdf` is still missing and three links point at it —
+  including the top-bar button, which sits inches from a chip inviting contact.
+  This is now the highest-cost gap on the page.
+- `[CLAUDE_CODE_101_URL]` still opens a dead address from `#credentials`.
+
+Still available if you want them back: `.samplechip` (real but not yet
+verifiable) and the `<span class="sample">// …</span>` notes, which sit in the
+comment colour rather than amber and so were left alone.
 
 ## 7. Personal data — keep it out of the repo
 
