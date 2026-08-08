@@ -89,7 +89,7 @@ it (`MIT`, `0.1.0`, `Android`, `dio`) is read from the `falconer` repo.
 |---|---|
 | `assets/alif-hasnain-resume.pdf` | ⚠ **Missing.** Three links point at this exact name — top bar (visible at every scroll depth), `download_cv()`, and the contact pane. Until the file exists, your second CTA 404s. |
 | ~~`assets/img/portrait-placeholder.svg`~~ | **Done** — `assets/img/portrait.webp` is a real photo at 620×720. The pane is greyscaled by CSS (`.portrait__frame img`); the source is already monochrome, so that filter only adds the contrast/brightness trim. |
-| ~~`assets/img/og.png`~~ | **Done** — 1200×630, drawn from the site's own tokens and both woff2 faces by `tools/og-card.html` (canvas → POST → `tools/og-save-server.py`). Redraw it after any token, portrait or wording change; it is a picture of the design, so it goes stale silently. ⚠ `og:image` is still a **relative** path — Facebook, LinkedIn and Slack want an absolute URL, so it needs `https://<domain>/…` once the deploy target exists. |
+| ~~`assets/img/og.png`~~ | **Done** — 1200×630, drawn from the site's own tokens and both woff2 faces by `tools/og-card.html` (canvas → POST → `tools/og-save-server.py`). Redraw it after any token, portrait or wording change; it is a picture of the design, so it goes stale silently. `og:image` and `og:url` are absolute against `https://alifhasnain.github.io/` — they must move together if the site ever changes host. |
 
 ## 5. Sample content — authored, replace when you can
 

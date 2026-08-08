@@ -28,29 +28,31 @@ npx --yes serve .
 Nothing to build, no environment variable to set. Works unchanged on GitHub Pages,
 Netlify, Cloudflare Pages, or any bucket.
 
-### Current state: deliberately unpublished
+### Current state: published
 
-Live at `https://alifhasnain.github.io`, but **serving a holding page, not this
-site.** Pages cannot be disabled on a `<user>.github.io` repo (the API returns
-`422`), and pointing it at an empty branch just makes Pages keep serving the last
-good build. So there are two branches:
+Live at `https://alifhasnain.github.io`, serving **this site** from `main`
+(`gh api repos/alifhasnain/alifhasnain.github.io/pages` → `source.branch: main`).
+It was previously held back behind a holding page; it is not held back now, so
+anything merged to `main` is public within a minute or two.
 
 | Branch | Contains | Role |
 |---|---|---|
-| `main` | this site | the real work; not currently served |
-| `pages-holding` | one `noindex` holding page | what Pages serves today |
+| `main` | this site | what Pages serves today |
+| `pages-holding` | one `noindex` holding page | the way to take the site down again |
 
-**To publish for real:** GitHub → Settings → Pages → Branch: `main`. Or:
+**To take it down:** point Pages back at the holding branch.
 
 ```bash
 gh api -X PUT repos/alifhasnain/alifhasnain.github.io/pages \
-  --input - <<< '{"source":{"branch":"main","path":"/"}}'
+  --input - <<< '{"source":{"branch":"pages-holding","path":"/"}}'
 ```
 
-Do that only after the bracket tokens are gone (`grep -n "\[" index.html`) — the
-root URL is the address that goes on a résumé.
+Do not delete `pages-holding` — Pages cannot be disabled on a `<user>.github.io`
+repo (the API returns `422`), and pointing it at an empty branch just makes Pages
+keep serving the last good build, so that branch is the only off switch.
 
-Do not delete `pages-holding`; it is the only way to take the site down again.
+The root URL is the address that goes on a résumé, and the remaining bracket
+tokens are public right now: `grep -n "\[" index.html`.
 
 ## Layout of the files
 
